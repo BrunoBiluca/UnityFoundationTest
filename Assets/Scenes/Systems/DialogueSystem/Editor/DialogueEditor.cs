@@ -55,6 +55,7 @@ public class DialogueEditor : EditorWindow
         ProcessEvents();
         foreach(var node in selectedDialogue.DialogueNodes)
         {
+            RenderConnections(node);
             RenderDialogueNode(node);
         }
     }
@@ -100,7 +101,7 @@ public class DialogueEditor : EditorWindow
     {
         GUILayout.BeginArea(node.rectPosition, nodeStyle);
 
-        EditorGUILayout.LabelField($"Node: {node.id}", EditorStyles.whiteBoldLabel);
+        EditorGUILayout.LabelField($"Node: {node.id}", EditorStyles.whiteLabel);
 
         EditorGUI.BeginChangeCheck();
 
@@ -113,5 +114,58 @@ public class DialogueEditor : EditorWindow
         }
 
         GUILayout.EndArea();
+    }
+
+    private void RenderConnections(DialogueNode node)
+    {
+        foreach(var childNode in selectedDialogue.GetChildrenNodes(node))
+        {
+            if(node.rectPosition.yMax < childNode.rectPosition.yMin)
+                RenderConnectionLineBottom(node, childNode);
+            else
+                RenderConnectionLineRight(node, childNode);
+        }
+    }
+
+    private void RenderConnectionLineBottom(DialogueNode node, DialogueNode childNode)
+    {
+        var parentPosition = new Vector2(
+            node.rectPosition.center.x, node.rectPosition.yMax
+        );
+        var childPosition = new Vector2(
+            childNode.rectPosition.center.x, childNode.rectPosition.yMin
+        );
+        var offset = new Vector2(0f, (childPosition.y - parentPosition.y) * .8f);
+
+        Handles.DrawBezier(
+            parentPosition,
+            childPosition,
+            parentPosition + offset,
+            childPosition - offset,
+            Color.white,
+            null,
+            4f
+        );
+    }
+
+    private static void RenderConnectionLineRight(DialogueNode node, DialogueNode childNode)
+    {
+        var parentPosition = new Vector2(
+            node.rectPosition.xMax, node.rectPosition.center.y
+        );
+        var childPosition = new Vector2(
+            childNode.rectPosition.xMin, childNode.rectPosition.center.y
+        );
+        var offset = new Vector2((childPosition.x - parentPosition.x) * .8f, 0f);
+
+        Handles.DrawBezier(
+            parentPosition,
+            childPosition,
+            parentPosition + offset,
+            childPosition - offset,
+            Color.white,
+            null,
+            4f
+        );
     }
 }

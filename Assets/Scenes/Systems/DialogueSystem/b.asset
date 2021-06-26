@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 043fc738d0c83694c8a0d38acbf5358a, type: 3}
-  m_Name: New dialogue
+  m_Name: b
   m_EditorClassIdentifier: 
   dialogueNodes:
-  - id: 
-    text: 
-    nextDialogueNodes: []
-    rectPosition:
-      serializedVersion: 2
-      x: 100
-      y: 100
-      width: 200
-      height: 100
+    m_keys:
+    - b
+    m_values:
+    - id: b
+      text: vdfgfdfbvdfbdfbdbfbfd
+      nextDialogueNodes: []
+      rectPosition:
+        serializedVersion: 2
+        x: 100
+        y: 107
+        width: 200
+        height: 100
