@@ -14,14 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueNodes:
     m_keys:
-    - b
+    - 059a44d6-3b00-4e7b-b467-5f3021bf28b2
+    - 0a451ed0-d375-4458-9ca1-6e7a094028b9
+    - ac327592-e07d-42d9-b96d-2050864ad3ca
     m_values:
-    - id: b
-      text: vdfgfdfbvdfbdfbdbfbfd
-      nextDialogueNodes: []
-      rectPosition:
+    - id: 059a44d6-3b00-4e7b-b467-5f3021bf28b2
+      text: a
+      nextDialogueNodes:
+      - 0a451ed0-d375-4458-9ca1-6e7a094028b9
+      previousDialogueNodes: []
+      rect:
         serializedVersion: 2
         x: 100
-        y: 107
+        y: 100
+        width: 200
+        height: 100
+    - id: 0a451ed0-d375-4458-9ca1-6e7a094028b9
+      text: b
+      nextDialogueNodes:
+      - ac327592-e07d-42d9-b96d-2050864ad3ca
+      previousDialogueNodes:
+      - 059a44d6-3b00-4e7b-b467-5f3021bf28b2
+      rect:
+        serializedVersion: 2
+        x: -27
+        y: 323
+        width: 200
+        height: 100
+    - id: ac327592-e07d-42d9-b96d-2050864ad3ca
+      text: v
+      nextDialogueNodes: []
+      previousDialogueNodes:
+      - 0a451ed0-d375-4458-9ca1-6e7a094028b9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 219
         width: 200
         height: 100
