@@ -5,102 +5,14 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-
-public class AddDialogueNodeAction : IDialogueEditorAction
-{
-    private readonly DialogueSO dialogue;
-    private readonly DialogueNode parent;
-    private Optional<Vector2> position = Optional<Vector2>.None();
-
-    public AddDialogueNodeAction(DialogueSO dialogue, DialogueNode parent)
-    {
-        this.dialogue = dialogue;
-        this.parent = parent;
-    }
-
-    public AddDialogueNodeAction SetCreatePosition(Vector2 position)
-    {
-        this.position = Optional<Vector2>.Some(position);
-        return this;
-    }
-
-    public void Handle()
-    {
-        Undo.RecordObject(dialogue, "Add dialogue node");
-        var newDialogueNode = dialogue.CreateNode(parent);
-
-        position.Some(pos => newDialogueNode.rect.position = pos);
-    }
-}
-public class RemoveDialogueNodeAction : IDialogueEditorAction
-{
-    private readonly DialogueSO dialogue;
-    private readonly DialogueNode node;
-
-    public RemoveDialogueNodeAction(DialogueSO dialogue, DialogueNode node)
-    {
-        this.dialogue = dialogue;
-        this.node = node;
-    }
-
-    public void Handle()
-    {
-        Undo.RecordObject(dialogue, "Remove dialogue node");
-        dialogue.RemoveNode(node);
-    }
-}
-
-public class LinkDialogueNodesAction : IDialogueEditorAction
-{
-    private readonly DialogueSO dialogue;
-    private readonly DialogueNode parent;
-    private readonly DialogueNode child;
-
-    public LinkDialogueNodesAction(DialogueSO dialogue, DialogueNode parent, DialogueNode child)
-    {
-        this.dialogue = dialogue;
-        this.parent = parent;
-        this.child = child;
-    }
-
-    public void Handle()
-    {
-        Undo.RecordObject(dialogue, "Link dialogue node");
-        dialogue.LinkNodes(parent, child);
-    }
-}
-
-public class UnlinkDialogueNodesAction : IDialogueEditorAction
-{
-    private readonly DialogueSO dialogue;
-    private readonly DialogueNode parent;
-    private readonly DialogueNode child;
-
-    public UnlinkDialogueNodesAction(DialogueSO dialogue, DialogueNode parent, DialogueNode child)
-    {
-        this.dialogue = dialogue;
-        this.parent = parent;
-        this.child = child;
-    }
-
-    public void Handle()
-    {
-        Undo.RecordObject(dialogue, "Unlink dialogue node");
-        dialogue.UnlinkNodes(parent, child);
-    }
-}
-
-public interface IDialogueEditorAction
-{
-    public void Handle();
-}
-
 public class DialogueEditor : EditorWindow
 {
+    private const string windowBaseName = "Dialogue Editor";
+
     [MenuItem("Window/Dialogue Editor")]
     public static void ShowEditorWindow()
     {
-        GetWindow(typeof(DialogueEditor), false, "Dialogue Editor");
+        GetWindow(typeof(DialogueEditor), false, $"{windowBaseName}");
     }
 
     [OnOpenAsset(1)]
@@ -115,21 +27,31 @@ public class DialogueEditor : EditorWindow
         return false;
     }
 
+    private DialogueEditorFactory guiFactory;
+
     private DialogueSO selectedDialogue;
     private GUIStyle nodeStyle;
     private Vector2 draggingOffset;
     private Optional<DialogueNode> draggingNode = Optional<DialogueNode>.None();
-    private Optional<DialogueNode> linkingNode = Optional<DialogueNode>.None();
+
+    public LinkingNodeContainer LinkingNodes { get; } = new LinkingNodeContainer();
+
     private Vector2 scrollviewPosition;
     private Vector2 lastMousePosition;
     private Texture2D backgroundTex;
-    private readonly List<IDialogueEditorAction> editorActions = new List<IDialogueEditorAction>();
+    public List<IDialogueEditorAction> Actions { get; } = new List<IDialogueEditorAction>();
 
     private void OnEnable()
     {
+        guiFactory = new DialogueEditorFactory(this);
+
         Selection.selectionChanged += () => {
-            selectedDialogue = Selection.activeObject as DialogueSO;
-            Repaint();
+            if(Selection.activeObject is DialogueSO dialogue)
+            {
+                titleContent = new GUIContent($"{windowBaseName} - {dialogue.name}");
+                selectedDialogue = dialogue;
+                Repaint();
+            }
         };
 
         nodeStyle = new GUIStyle();
@@ -157,11 +79,11 @@ public class DialogueEditor : EditorWindow
 
         GUI.DrawTextureWithTexCoords(
             canvas,
-            backgroundTex, 
+            backgroundTex,
             new Rect(
-                0, 
-                MathX.Remainder(canvas.height / backgroundTex.height), 
-                canvas.width / backgroundTex.width, 
+                0,
+                MathX.Remainder(canvas.height / backgroundTex.height),
+                canvas.width / backgroundTex.width,
                 canvas.height / backgroundTex.height
             )
         );
@@ -181,9 +103,14 @@ public class DialogueEditor : EditorWindow
         {
             var mousePosition = Event.current.mousePosition + scrollviewPosition;
             draggingNode = GetDraggingNode(mousePosition);
-            draggingNode.Some(dialogueNode =>
-                draggingOffset = dialogueNode.rect.position - mousePosition
-            );
+            draggingNode
+                .Some(dialogueNode => {
+                    draggingOffset = dialogueNode.Rect.position - mousePosition;
+                    Selection.activeObject = dialogueNode;
+                })
+                .OrElse(() =>
+                    Selection.activeObject = selectedDialogue
+                );
 
             lastMousePosition = Event.current.mousePosition;
         }
@@ -200,9 +127,10 @@ public class DialogueEditor : EditorWindow
                 if(Event.current.type != EventType.MouseDrag)
                     return;
 
-                Undo.RecordObject(selectedDialogue, "Move dialogue node");
+                Undo.RecordObject(dialogueNode, "Move dialogue node");
                 var mousePosition = Event.current.mousePosition + scrollviewPosition;
-                dialogueNode.rect.position = mousePosition + draggingOffset;
+                dialogueNode.Position = mousePosition + draggingOffset;
+                EditorUtility.SetDirty(dialogueNode);
                 GUI.changed = true;
             });
             return;
@@ -217,8 +145,8 @@ public class DialogueEditor : EditorWindow
 
         if(Event.current.type == EventType.ContextClick)
         {
-            editorActions.Add(
-                new AddDialogueNodeAction(selectedDialogue, null)
+            Actions.Add(
+                new AddDialogueNode(selectedDialogue, null)
                     .SetCreatePosition(Event.current.mousePosition)
             );
         }
@@ -227,7 +155,7 @@ public class DialogueEditor : EditorWindow
     private Optional<DialogueNode> GetDraggingNode(Vector2 mousePosition)
     {
         var node = selectedDialogue.DialogueNodes
-            .LastOrDefault(node => node.rect.Contains(mousePosition));
+            .LastOrDefault(node => node.Rect.Contains(mousePosition));
 
         if(node == null) return Optional<DialogueNode>.None();
 
@@ -236,27 +164,22 @@ public class DialogueEditor : EditorWindow
 
     private void RenderDialogueNode(DialogueNode node)
     {
-        GUILayout.BeginArea(node.rect, nodeStyle);
+        GUILayout.BeginArea(node.Rect, nodeStyle);
 
         EditorGUI.BeginChangeCheck();
 
-        var newText = EditorGUILayout.TextArea(node.text);
+        var newText = EditorGUILayout.TextArea(node.Text);
 
         if(EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(selectedDialogue, "Update dialogue node");
-            node.text = newText;
-        }
+            Actions.Add(ChangeTextNodeAction.create(node, newText));
 
         GUILayout.BeginHorizontal();
 
-        if(GUILayout.Button("x"))
-            editorActions.Add(new RemoveDialogueNodeAction(selectedDialogue, node));
+        guiFactory.Button("x", new RemoveDialogueNode(selectedDialogue, node));
 
         RenderLinkingButtons(node);
 
-        if(GUILayout.Button("+"))
-            editorActions.Add(new AddDialogueNodeAction(selectedDialogue, node));
+        guiFactory.Button("+", new AddDialogueNode(selectedDialogue, node));
 
         GUILayout.EndHorizontal();
 
@@ -265,47 +188,25 @@ public class DialogueEditor : EditorWindow
 
     private void RenderLinkingButtons(DialogueNode node)
     {
-        if(!linkingNode.IsPresent)
+        if(!LinkingNodes.IsLinkingNodeSet)
         {
-            if(GUILayout.Button("link"))
-            {
-                linkingNode = Optional<DialogueNode>.Some(node);
-            }
+            guiFactory.Button("link", () => LinkingNodes.SetLinkingNode(node));
             return;
         }
 
-
-        if(node.id == linkingNode.Get().id)
+        if(node.name == LinkingNodes.LinkingNode.Get().name)
         {
-            if(GUILayout.Button("cancel"))
-            {
-                linkingNode = Optional<DialogueNode>.None();
-            }
+            guiFactory.Button("cancel", () => LinkingNodes.Clear());
             return;
         }
 
-        if(
-            !linkingNode.Get().nextDialogueNodes.Contains(node.id)
-            && !linkingNode.Get().previousDialogueNodes.Contains(node.id)
-        )
+        if(LinkingNodes.LinkingNode.Get().HasLink(node))
         {
-            if(GUILayout.Button("link"))
-            {
-                editorActions.Add(
-                    new LinkDialogueNodesAction(selectedDialogue, node, linkingNode.Get())
-                );
-                linkingNode = Optional<DialogueNode>.None();
-            }
+            guiFactory.Button("link", LinkDialogueNodes.Create(selectedDialogue, node));
         }
         else
         {
-            if(GUILayout.Button("unlink"))
-            {
-                editorActions.Add(
-                    new UnlinkDialogueNodesAction(selectedDialogue, node, linkingNode.Get())
-                );
-                linkingNode = Optional<DialogueNode>.None();
-            }
+            guiFactory.Button("unlink", UnlinkDialogueNodes.Create(selectedDialogue, node));
         }
     }
 
@@ -313,7 +214,7 @@ public class DialogueEditor : EditorWindow
     {
         foreach(var childNode in selectedDialogue.GetChildrenNodes(node))
         {
-            if(node.rect.yMax < childNode.rect.yMin)
+            if(node.Rect.yMax < childNode.Rect.yMin)
                 RenderConnectionLineBottom(node, childNode);
             else
                 RenderConnectionLineRight(node, childNode);
@@ -323,10 +224,10 @@ public class DialogueEditor : EditorWindow
     private void RenderConnectionLineBottom(DialogueNode node, DialogueNode childNode)
     {
         var parentPosition = new Vector2(
-            node.rect.center.x, node.rect.yMax
+            node.Rect.center.x, node.Rect.yMax
         );
         var childPosition = new Vector2(
-            childNode.rect.center.x, childNode.rect.yMin
+            childNode.Rect.center.x, childNode.Rect.yMin
         );
         var offset = new Vector2(0f, (childPosition.y - parentPosition.y) * .8f);
 
@@ -350,10 +251,10 @@ public class DialogueEditor : EditorWindow
     private static void RenderConnectionLineRight(DialogueNode node, DialogueNode childNode)
     {
         var parentPosition = new Vector2(
-            node.rect.xMax, node.rect.center.y
+            node.Rect.xMax, node.Rect.center.y
         );
         var childPosition = new Vector2(
-            childNode.rect.xMin, childNode.rect.center.y
+            childNode.Rect.xMin, childNode.Rect.center.y
         );
         var offset = new Vector2((childPosition.x - parentPosition.x) * .8f, 0f);
 
@@ -376,10 +277,13 @@ public class DialogueEditor : EditorWindow
 
     private void ProcessActions()
     {
-        if(editorActions.Count == 0) return;
+        if(Actions.Count == 0) return;
 
-        editorActions.ForEach(action => action.Handle());
-        editorActions.Clear();
+        Actions.ForEach(action => {
+            action.SetDialogueEditor(this);
+            action.Handle();
+        });
+        Actions.Clear();
         GUI.changed = true;
     }
 }
