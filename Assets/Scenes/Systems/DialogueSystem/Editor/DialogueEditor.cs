@@ -212,7 +212,7 @@ public class DialogueEditor : EditorWindow
 
     private void RenderConnections(DialogueNode node)
     {
-        foreach(var childNode in selectedDialogue.GetChildrenNodes(node))
+        foreach(var childNode in selectedDialogue.GetNextDialogueNodes(node))
         {
             if(node.Rect.yMax < childNode.Rect.yMin)
                 RenderConnectionLineBottom(node, childNode);

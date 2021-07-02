@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 
 public class RemoveDialogueNode : IDialogueEditorAction
 {
@@ -18,8 +20,15 @@ public class RemoveDialogueNode : IDialogueEditorAction
 
     public void Handle()
     {
-        Undo.RecordObject(dialogue, "Remove dialogue node");
+        var objectsToUndo = new List<UnityEngine.Object> { dialogue, node };
+        
+        objectsToUndo.AddRange(dialogue.GetNextDialogueNodes(node));
+        objectsToUndo.AddRange(dialogue.GetPreviousDialogueNodes(node));
+                
+        Undo.RecordObjects(objectsToUndo.ToArray(), "Remove dialogue node");
+
         dialogue.RemoveNode(node);
+
         Undo.DestroyObjectImmediate(node);
     }
 }

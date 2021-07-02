@@ -25,7 +25,7 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
     }
 #endif
 
-    public IEnumerable<DialogueNode> GetChildrenNodes(DialogueNode node)
+    public IEnumerable<DialogueNode> GetNextDialogueNodes(DialogueNode node)
     {
         if(node.NextDialogueNodes == null) yield return null;
 
@@ -34,6 +34,19 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
             if(dialogueNodes.TryGetValue(childId, out DialogueNode childNode))
             {
                 yield return childNode;
+            }
+        }
+    }
+
+    public IEnumerable<DialogueNode> GetPreviousDialogueNodes(DialogueNode node)
+    {
+        if(node.PreviousDialogueNodes == null) yield return null;
+
+        foreach(var nodeId in node.PreviousDialogueNodes)
+        {
+            if(dialogueNodes.TryGetValue(nodeId, out DialogueNode dialogueNode))
+            {
+                yield return dialogueNode;
             }
         }
     }
