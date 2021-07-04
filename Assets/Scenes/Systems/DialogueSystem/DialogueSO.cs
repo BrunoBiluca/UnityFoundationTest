@@ -13,15 +13,19 @@ public class DialogueDictionary : SerializableDictionary<string, DialogueNode> {
 public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
 {
     [SerializeField] private DialogueDictionary dialogueNodes;
+    [SerializeField] private string startDialogueNodeName;
 
     public IEnumerable<DialogueNode> DialogueNodes => dialogueNodes.Values;
+
+    public DialogueNode StartDialogueNode => dialogueNodes[startDialogueNodeName];
 
 #if UNITY_EDITOR
     private void Awake()
     {
         if(dialogueNodes != null) return;
         dialogueNodes = new DialogueDictionary();
-        CreateNode(CreateInstance<DialogueNode>().Setup(), null);
+        var dialogueNode = CreateNode(CreateInstance<DialogueNode>().Setup(), null);
+        startDialogueNodeName = dialogueNode.name;
     }
 #endif
 
@@ -98,6 +102,11 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
                 previous.NextDialogueNodes.Remove(node.name);
             }
         });
+    }
+
+    public bool IsStartLine(DialogueNode node)
+    {
+        return node.name == startDialogueNodeName;
     }
 
     public Vector2 GetViewSize()

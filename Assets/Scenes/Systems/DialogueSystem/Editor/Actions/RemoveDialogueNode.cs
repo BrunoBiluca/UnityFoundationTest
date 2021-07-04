@@ -27,6 +27,10 @@ public class RemoveDialogueNode : IDialogueEditorAction
                 
         Undo.RecordObjects(objectsToUndo.ToArray(), "Remove dialogue node");
 
+        if(editor.LinkingNodes.LinkingNode.Get() == node)
+        {
+            editor.LinkingNodes.Clear();
+        }
         dialogue.RemoveNode(node);
 
         Undo.DestroyObjectImmediate(node);

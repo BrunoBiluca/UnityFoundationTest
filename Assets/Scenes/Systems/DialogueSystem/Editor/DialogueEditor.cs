@@ -30,7 +30,7 @@ public class DialogueEditor : EditorWindow
     private DialogueEditorFactory guiFactory;
 
     private DialogueSO selectedDialogue;
-    private GUIStyle nodeStyle;
+    private GUIStyle generalNodeStyle;
     private Vector2 draggingOffset;
     private Optional<DialogueNode> draggingNode = Optional<DialogueNode>.None();
 
@@ -39,6 +39,9 @@ public class DialogueEditor : EditorWindow
     private Vector2 scrollviewPosition;
     private Vector2 lastMousePosition;
     private Texture2D backgroundTex;
+    private GUIStyle firstLineStype;
+    private GUIStyle finishLineStype;
+
     public List<IDialogueEditorAction> Actions { get; } = new List<IDialogueEditorAction>();
 
     private void OnEnable()
@@ -54,11 +57,22 @@ public class DialogueEditor : EditorWindow
             }
         };
 
-        nodeStyle = new GUIStyle();
-        nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
-        nodeStyle.normal.textColor = Color.white;
-        nodeStyle.padding = new RectOffset(20, 20, 20, 20);
-        nodeStyle.border = new RectOffset(12, 12, 12, 12);
+        generalNodeStyle = new GUIStyle();
+        generalNodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
+        generalNodeStyle.normal.textColor = Color.white;
+        generalNodeStyle.padding = new RectOffset(20, 20, 20, 20);
+        generalNodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+        firstLineStype = new GUIStyle();
+        firstLineStype.normal.background = EditorGUIUtility.Load("node3") as Texture2D;
+        firstLineStype.padding = new RectOffset(20, 20, 20, 20);
+        firstLineStype.border = new RectOffset(12, 12, 12, 12);
+
+        finishLineStype = new GUIStyle();
+        finishLineStype.normal.background = EditorGUIUtility.Load("node6") as Texture2D;
+        finishLineStype.padding = new RectOffset(20, 20, 20, 20);
+        finishLineStype.border = new RectOffset(12, 12, 12, 12);
+
 
         backgroundTex = Resources.Load<Texture2D>("background");
     }
@@ -164,6 +178,15 @@ public class DialogueEditor : EditorWindow
 
     private void RenderDialogueNode(DialogueNode node)
     {
+        var nodeStyle = generalNodeStyle;
+
+        if(node.NextDialogueNodes.Count == 0)
+            nodeStyle = finishLineStype;
+
+        if(selectedDialogue.IsStartLine(node))
+            nodeStyle = firstLineStype;
+
+
         GUILayout.BeginArea(node.Rect, nodeStyle);
 
         EditorGUI.BeginChangeCheck();
