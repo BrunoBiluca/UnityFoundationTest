@@ -147,11 +147,12 @@ public class DialogueEditor : EditorWindow
                 if(Event.current.type != EventType.MouseDrag)
                     return;
 
-                Undo.RecordObject(dialogueNode, "Move dialogue node");
                 var mousePosition = Event.current.mousePosition + scrollviewPosition;
-                dialogueNode.Position = mousePosition + draggingOffset;
-                EditorUtility.SetDirty(dialogueNode);
-                GUI.changed = true;
+                Actions.Add(
+                    ChangeDialogueNodeAction
+                        .create(dialogueNode)
+                        .SetPosition(mousePosition + draggingOffset)
+                );
             });
             return;
         }
@@ -165,11 +166,25 @@ public class DialogueEditor : EditorWindow
 
         if(Event.current.type == EventType.ContextClick)
         {
-            Actions.Add(
-                new AddDialogueNode(selectedDialogue, null)
-                    .SetCreatePosition(Event.current.mousePosition)
+            var contextMenu = new GenericMenu();
+
+            contextMenu.AddItem(
+                new GUIContent("New node"),
+                true,
+                NewNodeContextMenu,
+                Event.current.mousePosition
             );
+
+            contextMenu.ShowAsContext();
         }
+    }
+
+    private void NewNodeContextMenu(object mousePosition)
+    {
+        Actions.Add(
+            new AddDialogueNode(selectedDialogue, null)
+                .SetCreatePosition((Vector2)mousePosition + scrollviewPosition)
+        );
     }
 
     private Optional<DialogueNode> GetDraggingNode(Vector2 mousePosition)
@@ -192,15 +207,14 @@ public class DialogueEditor : EditorWindow
         if(selectedDialogue.IsStartLine(node))
             nodeStyle = firstLineStype;
 
-
         GUILayout.BeginArea(node.Rect, nodeStyle);
 
         EditorGUI.BeginChangeCheck();
 
         var newSpearker = EditorGUILayout.ObjectField(
-            node.Spearker == null ? "Spearker" : node.Spearker.SpearkerName, 
-            node.Spearker, 
-            typeof(SpearkerSO), 
+            node.Spearker == null ? "Spearker" : node.Spearker.SpearkerName,
+            node.Spearker,
+            typeof(SpearkerSO),
             false
         ) as SpearkerSO;
 
@@ -208,10 +222,12 @@ public class DialogueEditor : EditorWindow
 
         if(EditorGUI.EndChangeCheck())
         {
-            Actions.Add(ChangeNodeSpearker.create(node, newSpearker));
-            Actions.Add(ChangeTextNodeAction.create(node, newText));
+            Actions.Add(
+                ChangeDialogueNodeAction.create(node)
+                    .SetText(newText)
+                    .SetSpeaker(newSpearker)
+            );
         }
-            
 
         GUILayout.BeginHorizontal();
 
@@ -319,11 +335,14 @@ public class DialogueEditor : EditorWindow
     {
         if(Actions.Count == 0) return;
 
-        Actions.ForEach(action => {
-            action.SetDialogueEditor(this);
-            action.Handle();
-        });
-        Actions.Clear();
+        if(Event.current.type == EventType.Repaint)
+        {
+            Actions.ForEach(action => {
+                action.SetDialogueEditor(this);
+                action.Handle();
+            });
+            Actions.Clear();
+        }
         GUI.changed = true;
     }
 }

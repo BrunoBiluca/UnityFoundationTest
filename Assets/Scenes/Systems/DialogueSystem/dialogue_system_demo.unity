@@ -690,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043632675128775162, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 626
+      value: 654
       objectReference: {fileID: 0}
     - target: {fileID: 1043632675128775162, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_SizeDelta.y
@@ -698,11 +698,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043632675128775162, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 333
+      value: 347
       objectReference: {fileID: 0}
     - target: {fileID: 1043632675128775162, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887029722225727225, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
+      propertyPath: destroyOnLoad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4397388071363072117, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_AnchorMax.y
@@ -742,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7788221140378125476, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 626
+      value: 654
       objectReference: {fileID: 0}
     - target: {fileID: 7788221140378125476, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_SizeDelta.y
@@ -750,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7788221140378125476, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 333
+      value: 347
       objectReference: {fileID: 0}
     - target: {fileID: 7788221140378125476, guid: eaff82114c5afe742b79aeec33dfff51, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -960,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fee368c4ee50b944ba6dadedc7f2fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnLoad: 0
+  destroyOnLoad: 1
   currentDialogue: {fileID: 11400000, guid: 7adab9926fb7c4e4fb306abdc64c104b, type: 2}
 --- !u!4 &2080056185
 Transform:

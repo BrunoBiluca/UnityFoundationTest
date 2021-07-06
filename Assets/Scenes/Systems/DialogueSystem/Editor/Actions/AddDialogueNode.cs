@@ -30,10 +30,10 @@ public class AddDialogueNode : IDialogueEditorAction
         Undo.RecordObject(dialogue, "Add Dialogue Node");
 
         var newDialogueNode = ScriptableObject.CreateInstance<DialogueNode>().Setup();
+        position.Some(pos => newDialogueNode.Position = pos);
+
         Undo.RegisterCreatedObjectUndo(newDialogueNode, "Create dialogue node");
 
         dialogue.CreateNode(newDialogueNode, parent);
-
-        position.Some(pos => newDialogueNode.Position = pos);
     }
 }

@@ -20,8 +20,8 @@ MonoBehaviour:
   - 5911bf1b-5cf4-4057-aac2-c79c96389669
   rect:
     serializedVersion: 2
-    x: 389
-    y: 954
+    x: 421
+    y: 963
     width: 200
     height: 100
 --- !u!114 &-6113068569045810026
@@ -44,8 +44,8 @@ MonoBehaviour:
   - 504776a0-064e-46d3-accb-8d52c7327428
   rect:
     serializedVersion: 2
-    x: 263
-    y: 770
+    x: 262
+    y: 780
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -96,11 +96,12 @@ MonoBehaviour:
   text: Don't worry, I'm fine.
   nextDialogueNodes:
   - 65fc938f-e23b-4831-8150-5aff03bd6d1c
+  - 5edb429e-a105-4050-a915-f5ecc0bbf8e3
   previousDialogueNodes:
   - ea6db823-e716-43c3-82e3-c0a0b1514584
   rect:
     serializedVersion: 2
-    x: 517
+    x: 539
     y: 516
     width: 200
     height: 100
@@ -117,14 +118,14 @@ MonoBehaviour:
   m_Name: d0d69f48-93db-4f7e-8518-5530f33d1532
   m_EditorClassIdentifier: 
   spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
-  text: Hiiiiiiiiiii
+  text: Hi
   nextDialogueNodes:
   - 651ee5ec-83a4-4b1c-97c2-053b8659b59b
   previousDialogueNodes: []
   rect:
     serializedVersion: 2
-    x: 394
-    y: 120
+    x: 402
+    y: 127
     width: 200
     height: 100
 --- !u!114 &5309075638125089301
@@ -171,8 +172,8 @@ MonoBehaviour:
   - d0d69f48-93db-4f7e-8518-5530f33d1532
   rect:
     serializedVersion: 2
-    x: 395
-    y: 246
+    x: 398
+    y: 245
     width: 200
     height: 100
 --- !u!114 &7060774560619172177
@@ -196,8 +197,8 @@ MonoBehaviour:
   - 651ee5ec-83a4-4b1c-97c2-053b8659b59b
   rect:
     serializedVersion: 2
-    x: 398
-    y: 374
+    x: 399
+    y: 373
     width: 200
     height: 100
 --- !u!114 &7127782830664198244
