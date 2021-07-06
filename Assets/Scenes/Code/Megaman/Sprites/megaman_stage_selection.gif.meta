@@ -1,7 +1,208 @@
 fileFormatVersion: 2
 guid: c6016ae673435e34db854b33d11b4494
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6272240322544948628
+    second: megaman_stage_selection_0
+  - first:
+      213: 4344695270485767802
+    second: megaman_stage_selection_1
+  - first:
+      213: 2569823346834548550
+    second: megaman_stage_selection_2
+  - first:
+      213: -6378922215408645671
+    second: megaman_stage_selection_3
+  - first:
+      213: 1345003155762317171
+    second: megaman_stage_selection_4
+  - first:
+      213: 7123531175606104896
+    second: megaman_stage_selection_5
+  - first:
+      213: 9060455996232250634
+    second: megaman_stage_selection_6
+  - first:
+      213: -7426909920543211914
+    second: megaman_stage_selection_7
+  - first:
+      213: -3117185495876787501
+    second: megaman_stage_selection_8
+  - first:
+      213: -349115068508989827
+    second: megaman_stage_selection_9
+  - first:
+      213: 3127535968017434947
+    second: megaman_stage_selection_10
+  - first:
+      213: 3051184518896719704
+    second: megaman_stage_selection_11
+  - first:
+      213: 1888137261918742570
+    second: megaman_stage_selection_12
+  - first:
+      213: 7003012035825388407
+    second: megaman_stage_selection_13
+  - first:
+      213: 967463917918491497
+    second: megaman_stage_selection_14
+  - first:
+      213: -5614897812197368388
+    second: megaman_stage_selection_15
+  - first:
+      213: -7064125694424377985
+    second: megaman_stage_selection_16
+  - first:
+      213: 1782778552652413418
+    second: megaman_stage_selection_17
+  - first:
+      213: -5722187262150976916
+    second: megaman_stage_selection_18
+  - first:
+      213: -233227721803127583
+    second: megaman_stage_selection_19
+  - first:
+      213: 5140760051862679690
+    second: megaman_stage_selection_20
+  - first:
+      213: 5317280287530236507
+    second: megaman_stage_selection_21
+  - first:
+      213: 6789127852060159665
+    second: megaman_stage_selection_22
+  - first:
+      213: 3306923548419574872
+    second: megaman_stage_selection_23
+  - first:
+      213: -1699328026781361262
+    second: megaman_stage_selection_24
+  - first:
+      213: 8885219673343640738
+    second: megaman_stage_selection_25
+  - first:
+      213: 4816155840173049026
+    second: megaman_stage_selection_26
+  - first:
+      213: -6418494733286818069
+    second: megaman_stage_selection_27
+  - first:
+      213: 5998337462651232874
+    second: megaman_stage_selection_28
+  - first:
+      213: 8463081132602636197
+    second: megaman_stage_selection_29
+  - first:
+      213: 8907925104619986353
+    second: megaman_stage_selection_30
+  - first:
+      213: 4222609784837400494
+    second: megaman_stage_selection_31
+  - first:
+      213: 8450313217747837670
+    second: megaman_stage_selection_32
+  - first:
+      213: 3555504510834187622
+    second: megaman_stage_selection_33
+  - first:
+      213: -236495165870089105
+    second: megaman_stage_selection_34
+  - first:
+      213: 3001531569715218164
+    second: megaman_stage_selection_35
+  - first:
+      213: -5267788414241374037
+    second: megaman_stage_selection_36
+  - first:
+      213: -7595797493852358526
+    second: megaman_stage_selection_37
+  - first:
+      213: -87878168923282545
+    second: megaman_stage_selection_38
+  - first:
+      213: -5271991326362759331
+    second: megaman_stage_selection_39
+  - first:
+      213: 5116589189063874280
+    second: megaman_stage_selection_40
+  - first:
+      213: -8576584508347649971
+    second: megaman_stage_selection_41
+  - first:
+      213: -3703924015966273566
+    second: megaman_stage_selection_42
+  - first:
+      213: -4456557023252438245
+    second: megaman_stage_selection_43
+  - first:
+      213: 962566012260236848
+    second: megaman_stage_selection_44
+  - first:
+      213: 229332513428945366
+    second: megaman_stage_selection_45
+  - first:
+      213: -5893980427997680281
+    second: megaman_stage_selection_46
+  - first:
+      213: 3730130363979213405
+    second: megaman_stage_selection_47
+  - first:
+      213: 4099789524930015379
+    second: megaman_stage_selection_48
+  - first:
+      213: 1609071674557646765
+    second: megaman_stage_selection_49
+  - first:
+      213: 5782356460528687946
+    second: megaman_stage_selection_50
+  - first:
+      213: 4569867872096241297
+    second: megaman_stage_selection_51
+  - first:
+      213: -5993892598350766982
+    second: megaman_stage_selection_52
+  - first:
+      213: -3413373863552696886
+    second: megaman_stage_selection_53
+  - first:
+      213: 7317983286999782462
+    second: megaman_stage_selection_54
+  - first:
+      213: 1404957583607874563
+    second: megaman_stage_selection_55
+  - first:
+      213: -508143438872415379
+    second: megaman_stage_selection_56
+  - first:
+      213: -5897291792282677349
+    second: megaman_stage_selection_57
+  - first:
+      213: 8262748685047588621
+    second: megaman_stage_selection_58
+  - first:
+      213: 2061122827413034354
+    second: megaman_stage_selection_59
+  - first:
+      213: -119829434142091519
+    second: megaman_stage_selection_60
+  - first:
+      213: -6410968685319155013
+    second: megaman_stage_selection_61
+  - first:
+      213: 135090161941465091
+    second: megaman_stage_selection_62
+  - first:
+      213: -3148994418388917747
+    second: megaman_stage_selection_63
+  - first:
+      213: 2191146060556582744
+    second: megaman_stage_selection_64
+  - first:
+      213: -8063534703364501830
+    second: megaman_stage_selection_65
+  - first:
+      213: -6785426222161142575
+    second: megaman_stage_selection_66
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +302,1414 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: megaman_stage_selection_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 256
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4955c2377597b0750800000000000000
+      internalID: 6272240322544948628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_1
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76bf9e44557b4c30800000000000000
+      internalID: 4344695270485767802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_2
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647249be7b8d9a320800000000000000
+      internalID: 2569823346834548550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_3
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d948b4ca048977a0800000000000000
+      internalID: -6378922215408645671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_4
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3770ef87e396aa210800000000000000
+      internalID: 1345003155762317171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_5
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0433c64bcdddbd260800000000000000
+      internalID: 7123531175606104896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_6
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 463
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a053b7669b43dbd70800000000000000
+      internalID: 9060455996232250634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_7
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 261
+        width: 202
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e7237d6c05ee890800000000000000
+      internalID: -7426909920543211914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_8
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 430
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2a34b9e488db4d0800000000000000
+      internalID: -3117185495876787501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_9
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 430
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7619c3e1b1b72bf0800000000000000
+      internalID: -349115068508989827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_10
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 418
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349cfeb746d376b20800000000000000
+      internalID: 3127535968017434947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_11
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 418
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8579201772cf75a20800000000000000
+      internalID: 3051184518896719704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_12
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2868dff5d2043a10800000000000000
+      internalID: 1888137261918742570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_13
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b4821d752bf2160800000000000000
+      internalID: 7003012035825388407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_14
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9631a88be4f1d6d00800000000000000
+      internalID: 967463917918491497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_15
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd9bd55030e312b0800000000000000
+      internalID: -5614897812197368388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_16
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f751027bb1f27fd90800000000000000
+      internalID: -7064125694424377985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_17
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 385
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae93808e5a3bdb810800000000000000
+      internalID: 1782778552652413418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_18
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ad935a005b690b0800000000000000
+      internalID: -5722187262150976916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_19
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4a62a6f9863ccf0800000000000000
+      internalID: -233227721803127583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_20
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a803bceb706a75740800000000000000
+      internalID: 5140760051862679690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_21
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a3d65df36cac940800000000000000
+      internalID: 5317280287530236507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_22
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bea1c4afc3d73e50800000000000000
+      internalID: 6789127852060159665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_23
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 373
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c4cea427d84ed20800000000000000
+      internalID: 3306923548419574872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_24
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 340
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bd4deb926ca68e0800000000000000
+      internalID: -1699328026781361262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_25
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 340
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4c5fc8734ae4b70800000000000000
+      internalID: 8885219673343640738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_26
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 328
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c40074383c66d240800000000000000
+      internalID: 4816155840173049026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_27
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 328
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee39b5fb0dece6a0800000000000000
+      internalID: -6418494733286818069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_28
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 311
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62ae3844206e3350800000000000000
+      internalID: 5998337462651232874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_29
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a737166377e27570800000000000000
+      internalID: 8463081132602636197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_30
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd98aabfae4f9b70800000000000000
+      internalID: 8907925104619986353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_31
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 302
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7625a1a39b99a30800000000000000
+      internalID: 4222609784837400494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_32
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2e5a0991b854570800000000000000
+      internalID: 8450313217747837670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_33
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d1295c380b75130800000000000000
+      internalID: 3555504510834187622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_34
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c573f46ecc7bcf0800000000000000
+      internalID: -236495165870089105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_35
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 295
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f60ff25f0597a920800000000000000
+      internalID: 3001531569715218164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 159
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba08931e85e05e6b0800000000000000
+      internalID: -5267788414241374037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_37
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 159
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288b0217c6e469690800000000000000
+      internalID: -7595797493852358526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_38
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 204
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83e0dd554bc7cef0800000000000000
+      internalID: -87878168923282545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_39
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 203
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f053522df16d6b0800000000000000
+      internalID: -5271991326362759331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_40
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e691c332c6c10740800000000000000
+      internalID: 5116589189063874280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40f1d194d9d9f880800000000000000
+      internalID: -8576584508347649971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_42
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efba415bb4099cc0800000000000000
+      internalID: -3703924015966273566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_43
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1324cbcff02722c0800000000000000
+      internalID: -4456557023252438245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_44
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03eb2a130b8bb5d00800000000000000
+      internalID: 962566012260236848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_45
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 202
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d93166b4b0ce2300800000000000000
+      internalID: 229332513428945366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_46
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 202
+        width: 96
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76de7144700643ea0800000000000000
+      internalID: -5893980427997680281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_47
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 159
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a21ee8dc514c330800000000000000
+      internalID: 3730130363979213405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_48
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 159
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390325fe9d065e830800000000000000
+      internalID: 4099789524930015379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_49
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 102
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7c62ca922945610800000000000000
+      internalID: 1609071674557646765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_50
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 102
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b5f7a809e0f3050800000000000000
+      internalID: 5782356460528687946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_51
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 102
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19644c21e9e6b6f30800000000000000
+      internalID: 4569867872096241297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_52
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 102
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c9575507a61dca0800000000000000
+      internalID: -5993892598350766982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_53
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 102
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdb6515e8241a0d0800000000000000
+      internalID: -3413373863552696886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_54
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 112
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e341ed5f603be8560800000000000000
+      internalID: 7317983286999782462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_55
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 111
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304407f7a796f7310800000000000000
+      internalID: 1404957583607874563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_56
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 63
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63701f0c36b2f8f0800000000000000
+      internalID: -508143438872415379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_57
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 62
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f0a203c5c982ea0800000000000000
+      internalID: -5897291792282677349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_58
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 4
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d076690b62e2ba270800000000000000
+      internalID: 8262748685047588621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_59
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 4
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275176e8a449a9c10800000000000000
+      internalID: 2061122827413034354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_60
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 4
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1071358b3c7465ef0800000000000000
+      internalID: -119829434142091519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_61
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 4
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2166d82f9a707a0800000000000000
+      internalID: -6410968685319155013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_62
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308cb2b59cfefd100800000000000000
+      internalID: 135090161941465091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_63
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 14
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02ad34b2468c44d0800000000000000
+      internalID: -3148994418388917747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_64
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 13
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fb87e9bb3886e10800000000000000
+      internalID: 2191146060556582744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_65
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 16
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe8ce3e8e1981090800000000000000
+      internalID: -8063534703364501830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_stage_selection_66
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 8
+        width: 110
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcd67a3dc255d1a0800000000000000
+      internalID: -6785426222161142575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

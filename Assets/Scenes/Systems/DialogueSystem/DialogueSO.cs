@@ -9,7 +9,7 @@ using UnityEngine;
 [Serializable]
 public class DialogueDictionary : SerializableDictionary<string, DialogueNode> { }
 
-[CreateAssetMenu(fileName = "New dialogue", menuName = "Dialogue")]
+[CreateAssetMenu(fileName = "New dialogue", menuName = "Dialogue/Dialogue")]
 public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
 {
     [SerializeField] private DialogueDictionary dialogueNodes;
@@ -28,6 +28,16 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
         startDialogueNodeName = dialogueNode.name;
     }
 #endif
+
+    public Optional<DialogueNode> Get(string dialogueNodeName)
+    {
+        if(dialogueNodes.TryGetValue(dialogueNodeName, out DialogueNode dialogueNode))
+        {
+            return Optional<DialogueNode>.Some(dialogueNode);
+        }
+
+        return Optional<DialogueNode>.None();
+    }
 
     public IEnumerable<DialogueNode> GetNextDialogueNodes(DialogueNode node)
     {

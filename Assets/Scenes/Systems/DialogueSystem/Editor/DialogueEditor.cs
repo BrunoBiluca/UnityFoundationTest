@@ -13,6 +13,13 @@ public class DialogueEditor : EditorWindow
     public static void ShowEditorWindow()
     {
         GetWindow(typeof(DialogueEditor), false, $"{windowBaseName}");
+        EditorApplication.quitting -= OnEditorQuit;
+        EditorApplication.quitting += OnEditorQuit;
+    }
+
+    private static void OnEditorQuit()
+    {
+        AssetDatabase.SaveAssets();
     }
 
     [OnOpenAsset(1)]
@@ -72,7 +79,6 @@ public class DialogueEditor : EditorWindow
         finishLineStype.normal.background = EditorGUIUtility.Load("node6") as Texture2D;
         finishLineStype.padding = new RectOffset(20, 20, 20, 20);
         finishLineStype.border = new RectOffset(12, 12, 12, 12);
-
 
         backgroundTex = Resources.Load<Texture2D>("background");
     }
@@ -191,10 +197,21 @@ public class DialogueEditor : EditorWindow
 
         EditorGUI.BeginChangeCheck();
 
-        var newText = EditorGUILayout.TextArea(node.Text);
+        var newSpearker = EditorGUILayout.ObjectField(
+            node.Spearker == null ? "Spearker" : node.Spearker.SpearkerName, 
+            node.Spearker, 
+            typeof(SpearkerSO), 
+            false
+        ) as SpearkerSO;
+
+        var newText = EditorGUILayout.TextArea(node.Text, GUILayout.ExpandHeight(true));
 
         if(EditorGUI.EndChangeCheck())
+        {
+            Actions.Add(ChangeNodeSpearker.create(node, newSpearker));
             Actions.Add(ChangeTextNodeAction.create(node, newText));
+        }
+            
 
         GUILayout.BeginHorizontal();
 

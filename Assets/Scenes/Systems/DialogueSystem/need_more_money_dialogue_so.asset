@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 65fc938f-e23b-4831-8150-5aff03bd6d1c
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
   text: Ok, no prob.
   nextDialogueNodes: []
   previousDialogueNodes:
@@ -35,6 +36,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 5911bf1b-5cf4-4057-aac2-c79c96389669
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
   text: Thanks a lot, you so kind.
   nextDialogueNodes:
   - 65fc938f-e23b-4831-8150-5aff03bd6d1c
@@ -90,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 96b6e199-6677-49eb-af9b-2c5c4967d792
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
   text: Don't worry, I'm fine.
   nextDialogueNodes:
   - 65fc938f-e23b-4831-8150-5aff03bd6d1c
@@ -97,7 +100,7 @@ MonoBehaviour:
   - ea6db823-e716-43c3-82e3-c0a0b1514584
   rect:
     serializedVersion: 2
-    x: 514
+    x: 517
     y: 516
     width: 200
     height: 100
@@ -113,14 +116,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: d0d69f48-93db-4f7e-8518-5530f33d1532
   m_EditorClassIdentifier: 
-  text: Hi
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Hiiiiiiiiiii
   nextDialogueNodes:
   - 651ee5ec-83a4-4b1c-97c2-053b8659b59b
   previousDialogueNodes: []
   rect:
     serializedVersion: 2
-    x: 397
-    y: 112
+    x: 394
+    y: 120
     width: 200
     height: 100
 --- !u!114 &5309075638125089301
@@ -135,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 504776a0-064e-46d3-accb-8d52c7327428
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
   text: Ok, sure, you deserve.
   nextDialogueNodes:
   - 5911bf1b-5cf4-4057-aac2-c79c96389669
@@ -142,8 +147,8 @@ MonoBehaviour:
   - 121be423-a0fd-476b-95cc-06fa98e39048
   rect:
     serializedVersion: 2
-    x: 263
-    y: 640
+    x: 262
+    y: 647
     width: 200
     height: 100
 --- !u!114 &6300147846984456259
@@ -158,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 651ee5ec-83a4-4b1c-97c2-053b8659b59b
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
   text: Hello
   nextDialogueNodes:
   - ea6db823-e716-43c3-82e3-c0a0b1514584
@@ -165,8 +171,8 @@ MonoBehaviour:
   - d0d69f48-93db-4f7e-8518-5530f33d1532
   rect:
     serializedVersion: 2
-    x: 398
-    y: 252
+    x: 395
+    y: 246
     width: 200
     height: 100
 --- !u!114 &7060774560619172177
@@ -181,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: ea6db823-e716-43c3-82e3-c0a0b1514584
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
   text: How can I help you?
   nextDialogueNodes:
   - 96b6e199-6677-49eb-af9b-2c5c4967d792
@@ -205,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: 121be423-a0fd-476b-95cc-06fa98e39048
   m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
   text: I need more money to buy a new sword!
   nextDialogueNodes:
   - 504776a0-064e-46d3-accb-8d52c7327428
@@ -212,7 +220,7 @@ MonoBehaviour:
   - ea6db823-e716-43c3-82e3-c0a0b1514584
   rect:
     serializedVersion: 2
-    x: 263
+    x: 268
     y: 516
     width: 200
     height: 100

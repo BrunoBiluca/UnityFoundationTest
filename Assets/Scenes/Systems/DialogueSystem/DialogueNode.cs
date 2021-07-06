@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class DialogueNode : ScriptableObject
 {
+    [SerializeField] private SpearkerSO spearker;
     [SerializeField] private string text;
     [SerializeField] private List<string> nextDialogueNodes = new List<string>();
     [SerializeField] private List<string> previousDialogueNodes = new List<string>();
@@ -16,6 +17,11 @@ public class DialogueNode : ScriptableObject
         name = Guid.NewGuid().ToString();
         text = "example";
         return this;
+    }
+
+    public SpearkerSO Spearker { 
+        get { return spearker; }
+        set { spearker = value; }
     }
 
     public string Text {
