@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 
 public class RemoveDialogueNode : IDialogueEditorAction
 {
-    private readonly DialogueSO dialogue;
+    private readonly DialogueRepository repository;
     private readonly DialogueNode node;
     private DialogueEditor editor;
 
-    public RemoveDialogueNode(DialogueSO dialogue, DialogueNode node)
+    public RemoveDialogueNode(DialogueRepository repository, DialogueNode node)
     {
-        this.dialogue = dialogue;
+        this.repository = repository;
         this.node = node;
     }
+
     public void SetDialogueEditor(DialogueEditor editor)
     {
         this.editor = editor;
@@ -20,10 +20,10 @@ public class RemoveDialogueNode : IDialogueEditorAction
 
     public void Handle()
     {
-        var objectsToUndo = new List<UnityEngine.Object> { dialogue, node };
+        var objectsToUndo = new List<UnityEngine.Object> { repository.Dialogue, node };
         
-        objectsToUndo.AddRange(dialogue.GetNextDialogueNodes(node));
-        objectsToUndo.AddRange(dialogue.GetPreviousDialogueNodes(node));
+        objectsToUndo.AddRange(repository.Dialogue.GetNextDialogueNodes(node));
+        objectsToUndo.AddRange(repository.Dialogue.GetPreviousDialogueNodes(node));
                 
         Undo.RecordObjects(objectsToUndo.ToArray(), "Remove dialogue node");
 
@@ -31,7 +31,7 @@ public class RemoveDialogueNode : IDialogueEditorAction
         {
             editor.LinkingNodes.Clear();
         }
-        dialogue.RemoveNode(node);
+        repository.RemoveNode(node);
 
         Undo.DestroyObjectImmediate(node);
     }

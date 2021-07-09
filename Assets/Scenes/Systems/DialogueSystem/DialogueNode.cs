@@ -1,6 +1,4 @@
-using Assets.UnityFoundation.EditorInspector;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,7 +31,7 @@ public class DialogueNode : ScriptableObject
 
     public List<string> PreviousDialogueNodes { get { return previousDialogueNodes; } }
 
-    public Rect Rect { get { return rect; } }
+    public Rect Rect { get { return rect; } set { rect = value; } }
 
     public Vector2 Position {
         get { return rect.position; }
@@ -44,5 +42,17 @@ public class DialogueNode : ScriptableObject
     {
         return !nextDialogueNodes.Contains(node.name)
             && !previousDialogueNodes.Contains(node.name);
+    }
+
+    public void Link(DialogueNode nextDialogueNode)
+    {
+        NextDialogueNodes.Add(nextDialogueNode.name);
+        nextDialogueNode.PreviousDialogueNodes.Add(name);
+    }
+
+    public void Unlink(DialogueNode nextDialogueNode)
+    {
+        NextDialogueNodes.Remove(nextDialogueNode.name);
+        nextDialogueNode?.PreviousDialogueNodes.Remove(name);
     }
 }

@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
-    [SerializeField] private DialogueSO currentDialogue;
-
+    private DialogueSO currentDialogue;
     private DialogueNode currentDialogueNode;
 
     public void Setup(DialogueSO dialogue)

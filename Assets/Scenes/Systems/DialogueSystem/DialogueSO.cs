@@ -1,7 +1,7 @@
-using Assets.UnityFoundation.EditorInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -15,8 +15,8 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField] private DialogueDictionary dialogueNodes;
     [SerializeField] private string startDialogueNodeName;
 
-    public IEnumerable<DialogueNode> DialogueNodes => dialogueNodes.Values;
-
+    public DialogueDictionary DialogueNodes => dialogueNodes;
+    public IEnumerable<DialogueNode> DialogueNodesValues => dialogueNodes.Values;
     public DialogueNode StartDialogueNode => dialogueNodes[startDialogueNodeName];
 
 #if UNITY_EDITOR
@@ -24,17 +24,33 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
     {
         if(dialogueNodes != null) return;
         dialogueNodes = new DialogueDictionary();
-        var dialogueNode = CreateNode(CreateInstance<DialogueNode>().Setup(), null);
+        var dialogueNode = CreateInstance<DialogueNode>().Setup();
+        dialogueNodes.Add(dialogueNode.name, dialogueNode);
         startDialogueNodeName = dialogueNode.name;
     }
 #endif
 
+    public void SetStartDialogueNode(DialogueNode dialogueNode)
+    {
+        startDialogueNodeName = dialogueNode.name;
+    }
+
+    public void Clear()
+    {
+        startDialogueNodeName = null;
+
+        foreach(var node in dialogueNodes.Values)
+        {
+            AssetDatabase.RemoveObjectFromAsset(node);
+        }
+
+        dialogueNodes = new DialogueDictionary();
+    }
+
     public Optional<DialogueNode> Get(string dialogueNodeName)
     {
         if(dialogueNodes.TryGetValue(dialogueNodeName, out DialogueNode dialogueNode))
-        {
             return Optional<DialogueNode>.Some(dialogueNode);
-        }
 
         return Optional<DialogueNode>.None();
     }
@@ -63,55 +79,6 @@ public class DialogueSO : ScriptableObject, ISerializationCallbackReceiver
                 yield return dialogueNode;
             }
         }
-    }
-
-    public DialogueNode CreateNode(DialogueNode newDialogueNode, DialogueNode parent)
-    {
-        dialogueNodes.Add(newDialogueNode.name, newDialogueNode);
-
-        if(parent != null)
-        {
-            newDialogueNode.Position = new Vector2(
-                parent.Rect.center.x,
-                parent.Rect.yMax + 10f
-            );
-            newDialogueNode.PreviousDialogueNodes.Add(parent.name);
-
-            parent.NextDialogueNodes.Add(newDialogueNode.name);
-        }
-
-        return newDialogueNode;
-    }
-
-    public void LinkNodes(DialogueNode parent, DialogueNode child)
-    {
-        parent.NextDialogueNodes.Add(child.name);
-        child.PreviousDialogueNodes.Add(parent.name);
-    }
-
-    public void UnlinkNodes(DialogueNode parent, DialogueNode child)
-    {
-        parent.NextDialogueNodes.Remove(child.name);
-        child.PreviousDialogueNodes.Remove(parent.name);
-    }
-
-    public void RemoveNode(DialogueNode node)
-    {
-        dialogueNodes.Remove(node.name);
-
-        node.NextDialogueNodes.ForEach(nodeId => {
-            if(dialogueNodes.TryGetValue(nodeId, out DialogueNode next))
-            {
-                next.PreviousDialogueNodes.Remove(node.name);
-            }
-        }); 
-
-        node.PreviousDialogueNodes.ForEach(nodeId => {
-            if(dialogueNodes.TryGetValue(nodeId, out DialogueNode previous))
-            {
-                previous.NextDialogueNodes.Remove(node.name);
-            }
-        });
     }
 
     public bool IsStartLine(DialogueNode node)

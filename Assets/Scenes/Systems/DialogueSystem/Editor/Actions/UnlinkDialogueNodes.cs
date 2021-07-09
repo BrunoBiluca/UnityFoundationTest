@@ -2,18 +2,16 @@
 
 public class UnlinkDialogueNodes : IDialogueEditorAction
 {
-    public static UnlinkDialogueNodes Create(DialogueSO dialogue, DialogueNode node)
+    public static UnlinkDialogueNodes Create(DialogueNode node)
     {
-        return new UnlinkDialogueNodes(dialogue, node);
+        return new UnlinkDialogueNodes(node);
     }
 
-    private readonly DialogueSO dialogue;
     private readonly DialogueNode parent;
     private DialogueEditor editor;
 
-    public UnlinkDialogueNodes(DialogueSO dialogue, DialogueNode node)
+    public UnlinkDialogueNodes(DialogueNode node)
     {
-        this.dialogue = dialogue;
         parent = node;
     }
     public void SetDialogueEditor(DialogueEditor editor)
@@ -24,8 +22,10 @@ public class UnlinkDialogueNodes : IDialogueEditorAction
     public void Handle()
     {
         var child = editor.LinkingNodes.LinkingNode.Get();
-        Undo.RecordObject(dialogue, "Unlink dialogue node");
-        dialogue.UnlinkNodes(parent, child);
+
+        Undo.RecordObjects(new UnityEngine.Object[] { child, parent }, "Unink dialogue node");
+        parent.Unlink(child);
+
         EditorUtility.SetDirty(parent);
         EditorUtility.SetDirty(child);
 

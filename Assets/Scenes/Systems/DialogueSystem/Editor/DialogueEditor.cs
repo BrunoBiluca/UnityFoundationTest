@@ -1,9 +1,11 @@
 using Assets.UnityFoundation.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
+
 
 public class DialogueEditor : EditorWindow
 {
@@ -35,20 +37,21 @@ public class DialogueEditor : EditorWindow
     }
 
     private DialogueEditorFactory guiFactory;
+    private DialogueEditorContextMenu contextMenu;
+    private DialogueEditorStyles styles;
 
+    private DialogueRepository dialogueRepository;
+    private DialogueCsvHandler dialogueCsvHandler;
     private DialogueSO selectedDialogue;
-    private GUIStyle generalNodeStyle;
+
     private Vector2 draggingOffset;
     private Optional<DialogueNode> draggingNode = Optional<DialogueNode>.None();
 
-    public LinkingNodeContainer LinkingNodes { get; } = new LinkingNodeContainer();
-
-    private Vector2 scrollviewPosition;
     private Vector2 lastMousePosition;
     private Texture2D backgroundTex;
-    private GUIStyle firstLineStype;
-    private GUIStyle finishLineStype;
 
+    public LinkingNodeContainer LinkingNodes { get; } = new LinkingNodeContainer();
+    public Vector2 ScrollviewPosition { get; private set; }
     public List<IDialogueEditorAction> Actions { get; } = new List<IDialogueEditorAction>();
 
     private void OnEnable()
@@ -58,27 +61,10 @@ public class DialogueEditor : EditorWindow
         Selection.selectionChanged += () => {
             if(Selection.activeObject is DialogueSO dialogue)
             {
-                titleContent = new GUIContent($"{windowBaseName} - {dialogue.name}");
                 selectedDialogue = dialogue;
                 Repaint();
             }
         };
-
-        generalNodeStyle = new GUIStyle();
-        generalNodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
-        generalNodeStyle.normal.textColor = Color.white;
-        generalNodeStyle.padding = new RectOffset(20, 20, 20, 20);
-        generalNodeStyle.border = new RectOffset(12, 12, 12, 12);
-
-        firstLineStype = new GUIStyle();
-        firstLineStype.normal.background = EditorGUIUtility.Load("node3") as Texture2D;
-        firstLineStype.padding = new RectOffset(20, 20, 20, 20);
-        firstLineStype.border = new RectOffset(12, 12, 12, 12);
-
-        finishLineStype = new GUIStyle();
-        finishLineStype.normal.background = EditorGUIUtility.Load("node6") as Texture2D;
-        finishLineStype.padding = new RectOffset(20, 20, 20, 20);
-        finishLineStype.border = new RectOffset(12, 12, 12, 12);
 
         backgroundTex = Resources.Load<Texture2D>("background");
     }
@@ -91,9 +77,27 @@ public class DialogueEditor : EditorWindow
             return;
         }
 
+        InitializeEditor();
+
+        EditorOnGUI();
+    }
+
+    private void InitializeEditor()
+    {
+        titleContent = new GUIContent($"{windowBaseName} - {selectedDialogue.name}");
+        dialogueRepository = new DialogueRepository(selectedDialogue);
+        dialogueCsvHandler = new DialogueCsvHandler(selectedDialogue);
+        contextMenu = new DialogueEditorContextMenu(
+            this, dialogueRepository, dialogueCsvHandler
+        );
+        styles = new DialogueEditorStyles(selectedDialogue);
+    }
+
+    private void EditorOnGUI()
+    {
         ProcessEvents();
 
-        scrollviewPosition = GUILayout.BeginScrollView(scrollviewPosition);
+        ScrollviewPosition = GUILayout.BeginScrollView(ScrollviewPosition);
         Vector2 scrollviewSize = selectedDialogue.GetViewSize();
         var canvas = GUILayoutUtility.GetRect(scrollviewSize.x + 400, scrollviewSize.y + 400);
 
@@ -108,7 +112,7 @@ public class DialogueEditor : EditorWindow
             )
         );
 
-        foreach(var node in selectedDialogue.DialogueNodes)
+        foreach(var node in selectedDialogue.DialogueNodesValues)
         {
             RenderConnections(node);
             RenderDialogueNode(node);
@@ -121,8 +125,8 @@ public class DialogueEditor : EditorWindow
     {
         if(Event.current.type == EventType.MouseDown)
         {
-            var mousePosition = Event.current.mousePosition + scrollviewPosition;
-            draggingNode = GetDraggingNode(mousePosition);
+            var mousePosition = Event.current.mousePosition + ScrollviewPosition;
+            draggingNode = GetDialogueNodeBy(mousePosition);
             draggingNode
                 .Some(dialogueNode => {
                     draggingOffset = dialogueNode.Rect.position - mousePosition;
@@ -147,7 +151,7 @@ public class DialogueEditor : EditorWindow
                 if(Event.current.type != EventType.MouseDrag)
                     return;
 
-                var mousePosition = Event.current.mousePosition + scrollviewPosition;
+                var mousePosition = Event.current.mousePosition + ScrollviewPosition;
                 Actions.Add(
                     ChangeDialogueNodeAction
                         .create(dialogueNode)
@@ -159,37 +163,23 @@ public class DialogueEditor : EditorWindow
 
         if(Event.current.type == EventType.MouseDrag)
         {
-            scrollviewPosition += lastMousePosition - Event.current.mousePosition;
+            ScrollviewPosition += lastMousePosition - Event.current.mousePosition;
             lastMousePosition = Event.current.mousePosition;
             GUI.changed = true;
         }
 
         if(Event.current.type == EventType.ContextClick)
         {
-            var contextMenu = new GenericMenu();
-
-            contextMenu.AddItem(
-                new GUIContent("New node"),
-                true,
-                NewNodeContextMenu,
-                Event.current.mousePosition
-            );
-
-            contextMenu.ShowAsContext();
+            var mousePosition = Event.current.mousePosition + ScrollviewPosition;
+            GetDialogueNodeBy(mousePosition)
+                .Some(node => contextMenu.ShowNodeContextMenu(node))
+                .OrElse(() => contextMenu.Show());
         }
     }
 
-    private void NewNodeContextMenu(object mousePosition)
+    private Optional<DialogueNode> GetDialogueNodeBy(Vector2 mousePosition)
     {
-        Actions.Add(
-            new AddDialogueNode(selectedDialogue, null)
-                .SetCreatePosition((Vector2)mousePosition + scrollviewPosition)
-        );
-    }
-
-    private Optional<DialogueNode> GetDraggingNode(Vector2 mousePosition)
-    {
-        var node = selectedDialogue.DialogueNodes
+        var node = selectedDialogue.DialogueNodesValues
             .LastOrDefault(node => node.Rect.Contains(mousePosition));
 
         if(node == null) return Optional<DialogueNode>.None();
@@ -199,15 +189,7 @@ public class DialogueEditor : EditorWindow
 
     private void RenderDialogueNode(DialogueNode node)
     {
-        var nodeStyle = generalNodeStyle;
-
-        if(node.NextDialogueNodes.Count == 0)
-            nodeStyle = finishLineStype;
-
-        if(selectedDialogue.IsStartLine(node))
-            nodeStyle = firstLineStype;
-
-        GUILayout.BeginArea(node.Rect, nodeStyle);
+        GUILayout.BeginArea(node.Rect, styles.GetNodeStyle(node));
 
         EditorGUI.BeginChangeCheck();
 
@@ -231,11 +213,11 @@ public class DialogueEditor : EditorWindow
 
         GUILayout.BeginHorizontal();
 
-        guiFactory.Button("x", new RemoveDialogueNode(selectedDialogue, node));
+        guiFactory.Button("x", new RemoveDialogueNode(dialogueRepository, node));
 
         RenderLinkingButtons(node);
 
-        guiFactory.Button("+", new AddDialogueNode(selectedDialogue, node));
+        guiFactory.Button("+", new AddDialogueNode(dialogueRepository, node));
 
         GUILayout.EndHorizontal();
 
@@ -258,11 +240,11 @@ public class DialogueEditor : EditorWindow
 
         if(LinkingNodes.LinkingNode.Get().HasLink(node))
         {
-            guiFactory.Button("link", LinkDialogueNodes.Create(selectedDialogue, node));
+            guiFactory.Button("link", LinkDialogueNodes.Create(node));
         }
         else
         {
-            guiFactory.Button("unlink", UnlinkDialogueNodes.Create(selectedDialogue, node));
+            guiFactory.Button("unlink", UnlinkDialogueNodes.Create(node));
         }
     }
 
@@ -271,64 +253,10 @@ public class DialogueEditor : EditorWindow
         foreach(var childNode in selectedDialogue.GetNextDialogueNodes(node))
         {
             if(node.Rect.yMax < childNode.Rect.yMin)
-                RenderConnectionLineBottom(node, childNode);
+                guiFactory.RenderConnectionLineBottom(node.Rect, childNode.Rect);
             else
-                RenderConnectionLineRight(node, childNode);
+                guiFactory.RenderConnectionLineRight(node.Rect, childNode.Rect);
         }
-    }
-
-    private void RenderConnectionLineBottom(DialogueNode node, DialogueNode childNode)
-    {
-        var parentPosition = new Vector2(
-            node.Rect.center.x, node.Rect.yMax
-        );
-        var childPosition = new Vector2(
-            childNode.Rect.center.x, childNode.Rect.yMin
-        );
-        var offset = new Vector2(0f, (childPosition.y - parentPosition.y) * .8f);
-
-        Handles.DrawBezier(
-            parentPosition,
-            childPosition,
-            parentPosition + offset,
-            childPosition - offset,
-            Color.white,
-            null,
-            4f
-        );
-
-        Handles.DrawAAConvexPolygon(
-            childPosition + new Vector2(-5f, -2f),
-            childPosition + new Vector2(5f, -2f),
-            childPosition + new Vector2(0f, 3f)
-        );
-    }
-
-    private static void RenderConnectionLineRight(DialogueNode node, DialogueNode childNode)
-    {
-        var parentPosition = new Vector2(
-            node.Rect.xMax, node.Rect.center.y
-        );
-        var childPosition = new Vector2(
-            childNode.Rect.xMin, childNode.Rect.center.y
-        );
-        var offset = new Vector2((childPosition.x - parentPosition.x) * .8f, 0f);
-
-        Handles.DrawBezier(
-            parentPosition,
-            childPosition,
-            parentPosition + offset,
-            childPosition - offset,
-            Color.white,
-            null,
-            4f
-        );
-
-        Handles.DrawAAConvexPolygon(
-            childPosition + new Vector2(-2f, -5f),
-            childPosition + new Vector2(-2f, 5f),
-            childPosition + new Vector2(3f, 0f)
-        );
     }
 
     private void ProcessActions()

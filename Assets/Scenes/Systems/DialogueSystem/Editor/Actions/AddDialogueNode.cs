@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class AddDialogueNode : IDialogueEditorAction
 {
-    private readonly DialogueSO dialogue;
+    private readonly DialogueRepository repository;
     private readonly DialogueNode parent;
     private Optional<Vector2> position = Optional<Vector2>.None();
     private DialogueEditor editor;
 
-    public AddDialogueNode(DialogueSO dialogue, DialogueNode parent)
+    public AddDialogueNode(DialogueRepository repository, DialogueNode parent)
     {
-        this.dialogue = dialogue;
+        this.repository = repository;
         this.parent = parent;
     }
 
@@ -27,13 +27,17 @@ public class AddDialogueNode : IDialogueEditorAction
 
     public void Handle()
     {
-        Undo.RecordObject(dialogue, "Add Dialogue Node");
-
         var newDialogueNode = ScriptableObject.CreateInstance<DialogueNode>().Setup();
         position.Some(pos => newDialogueNode.Position = pos);
 
-        Undo.RegisterCreatedObjectUndo(newDialogueNode, "Create dialogue node");
+        Undo.RecordObjects(
+            new Object[] { repository.Dialogue, newDialogueNode, parent }, 
+            "Add Dialogue Node"
+        );
 
-        dialogue.CreateNode(newDialogueNode, parent);
+        repository.CreateNode(newDialogueNode, parent);
+
+        EditorUtility.SetDirty(parent);
+        EditorUtility.SetDirty(newDialogueNode);
     }
 }

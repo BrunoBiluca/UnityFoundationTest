@@ -1,0 +1,9 @@
+DialogueName,DialogueNodeName,SpearkerName,Text,NextDialogues,Rect
+new_dialogue_so,d0d69f48-93db-4f7e-8518-5530f33d1532,bruno_spearker_so,Hi,651ee5ec-83a4-4b1c-97c2-053b8659b59b,402|127|200|100
+new_dialogue_so,651ee5ec-83a4-4b1c-97c2-053b8659b59b,guest_speaker_so,Hello,ea6db823-e716-43c3-82e3-c0a0b1514584,398|245|200|100
+new_dialogue_so,ea6db823-e716-43c3-82e3-c0a0b1514584,bruno_spearker_so,How can I help you?,96b6e199-6677-49eb-af9b-2c5c4967d792|121be423-a0fd-476b-95cc-06fa98e39048,399|373|200|100
+new_dialogue_so,96b6e199-6677-49eb-af9b-2c5c4967d792,guest_speaker_so,"Don't worry, I'm fine.",65fc938f-e23b-4831-8150-5aff03bd6d1c|5edb429e-a105-4050-a915-f5ecc0bbf8e3,573|575|200|100
+new_dialogue_so,121be423-a0fd-476b-95cc-06fa98e39048,guest_speaker_so,I need more money to buy a new sword!,504776a0-064e-46d3-accb-8d52c7327428,268|516|200|100
+new_dialogue_so,65fc938f-e23b-4831-8150-5aff03bd6d1c,bruno_spearker_so,"Ok, no prob.",,421|963|200|100
+new_dialogue_so,504776a0-064e-46d3-accb-8d52c7327428,bruno_spearker_so,"Ok, sure, you deserve.",5911bf1b-5cf4-4057-aac2-c79c96389669,262|647|200|100
+new_dialogue_so,5911bf1b-5cf4-4057-aac2-c79c96389669,guest_speaker_so,"Thanks a lot, you so kind.",65fc938f-e23b-4831-8150-5aff03bd6d1c,262|780|200|100

@@ -3,19 +3,17 @@ using UnityEditor;
 
 public class LinkDialogueNodes : IDialogueEditorAction
 {
-    public static LinkDialogueNodes Create(DialogueSO dialogue, DialogueNode node)
+    public static LinkDialogueNodes Create(DialogueNode node)
     {
-        return new LinkDialogueNodes(dialogue, node);
+        return new LinkDialogueNodes(node);
     }
 
-    private readonly DialogueSO dialogue;
     private readonly DialogueNode parent;
     private DialogueEditor editor;
 
-    public LinkDialogueNodes(DialogueSO dialogue, DialogueNode node)
+    public LinkDialogueNodes(DialogueNode node)
     {
-        this.dialogue = dialogue;
-        this.parent = node;
+        parent = node;
     }
     public void SetDialogueEditor(DialogueEditor editor)
     {
@@ -27,7 +25,7 @@ public class LinkDialogueNodes : IDialogueEditorAction
         var child = editor.LinkingNodes.LinkingNode.Get();
 
         Undo.RecordObjects(new UnityEngine.Object[] { child, parent }, "Link dialogue node");
-        dialogue.LinkNodes(parent, child);
+        parent.Link(child);
         EditorUtility.SetDirty(parent);
         EditorUtility.SetDirty(child);
 
