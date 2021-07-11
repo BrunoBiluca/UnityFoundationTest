@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
   m_Name: cfa0e30d-a89b-48eb-add2-5b7fb298bfa1
   m_EditorClassIdentifier: 
-  spearker: {fileID: 0}
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
   text: End
   nextDialogueNodes:
   - 2edada54-d9f2-412c-8a04-04b6c71e690d
