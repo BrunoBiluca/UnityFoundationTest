@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.UnityFoundation.EditorInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +7,7 @@ public class TimerV2DemoManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI loopCounterText;
     [SerializeField] private TextMeshProUGUI loopCompletionText;
+    [SerializeField] private Button toggleLoopTimerButton;
     private int loopCounter;
     private TimerV2 loopTimer;
 
@@ -33,6 +33,26 @@ public class TimerV2DemoManager : MonoBehaviour
             .SetName("Loop counter timer")
             .Loop()
             .Start();
+
+        toggleLoopTimerButton.onClick.AddListener(() => {
+            if(loopTimer.IsRunning)
+            {
+                loopTimer.Stop();
+                toggleLoopTimerButton
+                    .transform
+                    .Find("text")
+                    .GetComponent<TextMeshProUGUI>()
+                    .text = "Resume";
+                return;
+            }
+
+            loopTimer.Resume();            
+            toggleLoopTimerButton
+                .transform
+                .Find("text")
+                .GetComponent<TextMeshProUGUI>()
+                .text = "Stop";
+        });
     }
 
     private void RunOnceTimer()
@@ -42,6 +62,7 @@ public class TimerV2DemoManager : MonoBehaviour
             runCounterText.text = $"Count: {runOnceCounter}";
         })
             .SetName("Loop run once timer")
+            .RunOnce()
             .Start();
 
         runOnceResetButton.onClick.AddListener(() => {
