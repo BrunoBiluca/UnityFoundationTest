@@ -9,14 +9,12 @@ public class SumoEnemyController : MonoBehaviour
     private Rigidbody rigidBody;
     private Transform player;
 
-    // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         player = GameObject.Find("player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var lookDirection = (player.position - transform.position).normalized;
