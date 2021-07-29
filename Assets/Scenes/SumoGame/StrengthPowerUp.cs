@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StrengthPowerUp : MonoBehaviour
 {
-    public void Handle(SumoPlayerController player)
+    public void Handle(SumoPlayer player)
     {
-        player.HasPowerup = true;
+        player.HasPowerUp = true;
 
         Destroy(gameObject);
     }
