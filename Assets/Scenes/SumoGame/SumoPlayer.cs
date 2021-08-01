@@ -8,6 +8,7 @@ public class SumoPlayer : MonoBehaviour
     {
         public float Speed { get; set; } = 5f;
         public float PushStrength { get; set; } = 15f;
+        public float Jump { get; set; } = 8f;
     }
 
     public bool HasPowerUp { get; set; }
@@ -17,8 +18,14 @@ public class SumoPlayer : MonoBehaviour
     private Rigidbody rigidBody;
     private Transform focalPoint;
 
+    private TimerV2 jumpCooldown;
+    private bool canJump;
+
     private void Awake()
     {
+        canJump = true;
+        jumpCooldown = new TimerV2(2f, () => canJump = true).RunOnce();
+
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -35,6 +42,19 @@ public class SumoPlayer : MonoBehaviour
         var movementInput = Input.GetAxis("Vertical");
 
         rigidBody.AddForce(focalPoint.forward * movementInput * stats.Speed);
+
+        if(Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            canJump = false;
+            rigidBody.AddForce(Vector3.up * stats.Jump, ForceMode.Impulse);
+            jumpCooldown.Start();
+        }
+
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject);
+            SumoGameManager.Instance.PlayerFell();
+        }
     }
 
     public void OnTriggerEnter(Collider other)

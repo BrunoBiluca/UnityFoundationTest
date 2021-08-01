@@ -12,12 +12,38 @@ public class SumoEnemyController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        player = GameObject.Find("player").transform;
+
+        var playerGO = GameObject.Find("player");
+        if(playerGO != null)
+            player = playerGO.transform;
     }
 
     void Update()
     {
-        var lookDirection = (player.position - transform.position).normalized;
-        rigidBody.AddForce(lookDirection * movementSpeed);
+        FollowPlayer();
+
+        if(transform.position.y < -10)
+        {
+            SumoGameManager.Instance.EnemyFell();
+            Destroy(gameObject);
+        }
+    }
+
+    private void FollowPlayer()
+    {
+        if(player == null) {
+            Destroy(gameObject);
+            return;
+        }
+
+        try
+        {
+            var lookDirection = (player.position - transform.position).normalized;
+            rigidBody.AddForce(lookDirection * movementSpeed);
+        }
+        catch(MissingReferenceException)
+        {
+            Destroy(gameObject);
+        }
     }
 }
