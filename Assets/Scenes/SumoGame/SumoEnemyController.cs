@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SumoEnemyController : MonoBehaviour
+public class SumoEnemyController : PooledObject
 {
     [SerializeField] private float movementSpeed;
 
@@ -25,14 +23,14 @@ public class SumoEnemyController : MonoBehaviour
         if(transform.position.y < -10)
         {
             SumoGameManager.Instance.EnemyFell();
-            Destroy(gameObject);
+            Deactivate();
         }
     }
 
     private void FollowPlayer()
     {
         if(player == null) {
-            Destroy(gameObject);
+            Deactivate();
             return;
         }
 
@@ -43,7 +41,7 @@ public class SumoEnemyController : MonoBehaviour
         }
         catch(MissingReferenceException)
         {
-            Destroy(gameObject);
+            Deactivate();
         }
     }
 }

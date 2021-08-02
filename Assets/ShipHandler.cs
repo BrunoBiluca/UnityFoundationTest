@@ -15,7 +15,7 @@ public class ShipHandler : MonoBehaviour {
     public void Shoot() {
         shootObjectPooling
             .GetAvailableObject()
-            .Active(obj => obj.transform.position = transform.position);
+            .Activate(obj => obj.transform.position = transform.position);
     }
 
 }

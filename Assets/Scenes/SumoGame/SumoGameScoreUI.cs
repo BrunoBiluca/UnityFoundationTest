@@ -30,6 +30,11 @@ public class SumoGameScoreUI : Singleton<SumoGameScoreUI>
             .GetComponent<TextMeshProUGUI>();
     }
 
+    public void UpdateHighScore(int highScore)
+    {
+        recordText.text = highScore.ToString();
+    }
+
     public void UpdateScore(int score)
     {
         scoreText.text = score.ToString();
