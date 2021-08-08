@@ -1,3 +1,4 @@
+using LeaderBoardApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 public class LeaderBoardContext : DbContext {

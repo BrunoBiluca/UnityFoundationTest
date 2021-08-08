@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace leaderabord_api
+namespace LeaderBoardApi
 {
     public class Program
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace leaderabord_api {
+namespace LeaderBoardApi {
     public class Startup
     {
         public Startup(IConfiguration configuration)

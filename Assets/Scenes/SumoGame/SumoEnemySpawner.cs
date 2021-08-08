@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class SumoEnemySpawner : MonoBehaviour
+public class SumoEnemySpawner : Singleton<SumoEnemySpawner>
 {
     [SerializeField] private ObjectPooling objectPooling;
 
-    void Start()
+    public void InvokeEnemies()
     {
         InvokeRepeating(nameof(InstantiateEnemy), 0f, 3f);
     }

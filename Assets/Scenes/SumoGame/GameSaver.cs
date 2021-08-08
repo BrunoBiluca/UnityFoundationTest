@@ -17,6 +17,9 @@ public class GameSaver : Singleton<GameSaver>
 
     public T Load<T>(string fileName)
     {
+        if(!File.Exists($"{Application.persistentDataPath}/{fileName}"))
+            return default;
+
         var binaryFormatter = new BinaryFormatter();
         using var file = File.Open(
             $"{Application.persistentDataPath}/{fileName}", 

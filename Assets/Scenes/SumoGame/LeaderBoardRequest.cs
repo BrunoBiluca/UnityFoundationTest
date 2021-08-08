@@ -2,41 +2,92 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class LeaderBoardRequest : Singleton<LeaderBoardRequest>
 {
-    void Start()
+    private const string Protocol = "https";
+    private const string Host = "localhost";
+    private const string Port = "44376";
+    private const string LeaderboardEndpoint = "api/leaderboards";
+    private const string UserLeaderboardEndpoint = "api/users/<user>/leaderboards";
+
+    public string URL => $"{Protocol}://{Host}:{Port}/{LeaderboardEndpoint}";
+    public string USER_URL => $"{Protocol}://{Host}:{Port}/{UserLeaderboardEndpoint}";
+
+    public void AddScore(
+        NewLeaderBoardScore newScore,
+        Action<LeaderBoardScoreModel> onSuccess,
+        Action<string> onError
+    )
     {
-        var leaderboard = new LeaderBoardModel() {
-            Score = UnityEngine.Random.Range(1, 1000),
-            User = Guid.NewGuid().ToString()
-        };
-
-        Debug.Log(JsonConvert.SerializeObject(
-            leaderboard,
-            new JsonSerializerSettings() {
-                ContractResolver = new DefaultContractResolver {
-                    NamingStrategy = new SnakeCaseNamingStrategy()
-                }
-            }
-        ));
-
         WebRequests.Post(
-            "https://localhost:44376/api/leaderboards",
-            JsonConvert.SerializeObject(leaderboard),
+            URL,
+            JsonConvert.SerializeObject(
+                newScore,
+                new JsonSerializerSettings() {
+                    ContractResolver = new DefaultContractResolver {
+                        NamingStrategy = new SnakeCaseNamingStrategy()
+                    }
+                }
+            ),
             (response) => {
-                Debug.Log(JsonConvert.DeserializeObject<LeaderBoardModel>(response).Score);
-                WebRequests.Get(
-                    "https://localhost:44376/api/leaderboards",
-                    (response) => Debug.Log(
-                        JsonConvert.DeserializeObject<List<LeaderBoardModel>>(response).Last().User),
-                    (error) => Debug.Log(error)
-                );
+                var leaderBoardScore = JsonConvert
+                    .DeserializeObject<LeaderBoardScoreModel>(response);
+                onSuccess(leaderBoardScore);
             },
-            (error) => Debug.Log(error)
+            (error) => {
+                Debug.Log(error);
+                onError(error);
+            }
         );
+    }
 
+    public void GetHighestScores(
+        int limit,
+        Action<List<LeaderBoardScoreModel>> onSuccess,
+        Action<string> onError
+    )
+    {
+        WebRequests.Get(
+            $"{URL}?order=desc&limit={limit}",
+            (response) => {
+                var highestScores = JsonConvert
+                    .DeserializeObject<List<LeaderBoardScoreModel>>(response);
+                onSuccess(highestScores);
+            },
+            (error) => {
+                Debug.Log(error);
+                onError(error);
+            }
+        );
+    }
+
+    public void GetUserPersonalRecord(
+        string user,
+        Action<LeaderBoardScoreModel> onSuccess,
+        Action<string> onError
+    )
+    {
+        string url = USER_URL.Replace("<user>", user);
+        WebRequests.Get(
+            $"{url}?order=desc",
+            (response) => {
+                var personalRecord = JsonConvert
+                    .DeserializeObject<List<LeaderBoardScoreModel>>(response);
+
+                if(personalRecord.Count == 0)
+                {
+                    onSuccess(null);
+                    return;
+                }
+
+                onSuccess(personalRecord[0]);
+            },
+            (error) => {
+                Debug.Log(error);
+                onError(error);
+            }
+        );
     }
 }
