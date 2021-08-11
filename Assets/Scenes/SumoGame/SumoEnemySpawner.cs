@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class SumoEnemySpawner : Singleton<SumoEnemySpawner>
 {
-    [SerializeField] private ObjectPooling objectPooling;
+    private ObjectPooling objectPooling;
+
+    private void Start()
+    {
+        objectPooling = GetComponentInChildren<ObjectPooling>();
+        objectPooling.InstantiateObjects();
+    }
 
     public void InvokeEnemies()
     {
@@ -11,13 +17,15 @@ public class SumoEnemySpawner : Singleton<SumoEnemySpawner>
 
     private void InstantiateEnemy()
     {
-        var spawnPositionX = Random.Range(9f, -9f);
-        var spawnPositionZ = Random.Range(9f, -9f);
+        var enemyRef = objectPooling.GetAvailableObject().Get();
 
-        var enemyRef = objectPooling.GetAvailableObject() as SumoEnemyController;
+        enemyRef.Activate((SumoEnemyController enemyGO) => {
+            var spawnPositionX = Random.Range(9f, -9f);
+            var spawnPositionZ = Random.Range(9f, -9f);
 
-        enemyRef.Activate(enemyGO => {
-            enemyGO.transform.position = new Vector3(spawnPositionX, 0f, spawnPositionZ);
+            var mass = Random.Range(0.8f, 2.0f);
+
+            enemyGO.Setup(new Vector3(spawnPositionX, 0f, spawnPositionZ), mass);
         });
     }
 }

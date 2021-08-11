@@ -7,10 +7,17 @@ public class SumoEnemyController : PooledObject
     private Rigidbody rigidBody;
     private Transform player;
 
+    private Vector3 originalScale;
+
+    private void Awake()
+    {
+        originalScale = transform.localScale;
+
+        rigidBody = GetComponent<Rigidbody>();
+    }
+
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
-
         var playerGO = GameObject.Find("player");
         if(playerGO != null)
             player = playerGO.transform;
@@ -25,6 +32,14 @@ public class SumoEnemyController : PooledObject
             SumoGameManager.Instance.EnemyFell();
             Deactivate();
         }
+    }
+
+    public SumoEnemyController Setup(Vector3 position, float mass)
+    {
+        transform.position = position;
+        transform.localScale = originalScale * mass;
+        rigidBody.mass = mass;
+        return this;
     }
 
     private void FollowPlayer()

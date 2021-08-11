@@ -87,6 +87,7 @@ public class SumoGameManager : BaseGameManager<SumoGameManager>
 
         Time.timeScale = 1f;
         SumoEnemySpawner.Instance.InvokeEnemies();
+        PowerupSpawner.Instance.InvokePowerups();
     }
 
     public void EnemyFell()
