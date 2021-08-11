@@ -1,0 +1,7 @@
+﻿version: "3.9"
+services:
+    leaderboard-api:
+        build: .
+        ports:
+            - "4430:443"
+            - "8000:80"
