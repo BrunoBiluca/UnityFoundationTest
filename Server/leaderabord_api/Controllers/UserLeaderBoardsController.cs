@@ -1,4 +1,5 @@
 ﻿using LeaderBoardApi.Models;
+using LeaderBoardApi.Models;
 using LeaderBoardApi.QueryBuilder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using LeaderBoardApi.Models;
 using LeaderBoardApi.QueryBuilder;
+using LeaderBoardApi.Models;
 
 namespace LeaderBoardApi.Controllers
 {

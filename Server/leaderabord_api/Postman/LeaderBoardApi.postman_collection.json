@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "7e3a6074-1da0-49bc-a1e9-530d62fc8a36",
+		"name": "LeaderBoardApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get leaderboards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44376/api/leaderboards",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44376",
+					"path": [
+						"api",
+						"leaderboards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get leaderboards highest score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44376/api/leaderboards?limit=1&order=desc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44376",
+					"path": [
+						"api",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create leaderboard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"Biluca\",\r\n    \"score\": 24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44376/api/leaderboards",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44376",
+					"path": [
+						"api",
+						"leaderboards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user leaderbords",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44376/api/users/Bruno/leaderboards",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44376",
+					"path": [
+						"api",
+						"users",
+						"Bruno",
+						"leaderboards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get personal record score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44376/api/users/Bruno/leaderboards?order=desc&limit=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44376",
+					"path": [
+						"api",
+						"users",
+						"Bruno",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,3 +1,4 @@
+using LeaderBoardApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace LeaderBoardApi {
+namespace LeaderBoardApi
+{
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,8 +22,10 @@ namespace LeaderBoardApi {
         {
             services.AddControllers();
 
+            var connection = Configuration["Database:SqliteConnectionString"];
             services.AddDbContext<LeaderBoardContext>(
-                opt => opt.UseInMemoryDatabase("leaderboard")
+                //opt => opt.UseInMemoryDatabase("leaderboard")
+                opt => opt.UseSqlite(connection)
             );
 
             services.AddSwaggerGen(c =>

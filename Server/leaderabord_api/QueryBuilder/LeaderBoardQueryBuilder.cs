@@ -1,4 +1,5 @@
 ﻿using LeaderBoardApi.Models;
+using LeaderBoardApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
