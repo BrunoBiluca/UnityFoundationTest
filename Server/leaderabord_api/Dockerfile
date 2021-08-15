@@ -18,3 +18,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "leaderabord_api.dll"]
+
+# CMD ASPNETCORE_URLS=http://*:$PORT dotnet leaderabord_api.dll
