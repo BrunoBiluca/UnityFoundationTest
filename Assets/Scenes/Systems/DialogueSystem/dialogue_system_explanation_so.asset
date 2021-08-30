@@ -49,6 +49,29 @@ MonoBehaviour:
     y: 846
     width: 200
     height: 100
+--- !u!114 &-7717569433524571849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 60a2f3d6-8806-4471-bc3d-6d1f6db8088a
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Welcome to Biluca's Dialogue System.
+  nextDialogueNodes:
+  - dcaf4a16-bb36-4357-a1e7-6585da1a50eb
+  previousDialogueNodes: []
+  rect:
+    serializedVersion: 2
+    x: 554
+    y: 48
+    width: 200
+    height: 100
 --- !u!114 &-7071491712433546024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +126,31 @@ MonoBehaviour:
     y: 965
     width: 200
     height: 100
+--- !u!114 &-5796057073753525197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: e8b268db-e7b1-43bb-b6d4-ad1619f41329
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: This Dialogue system comes with a Custom Editor, you can Import/Export as
+    CSV and manager the dialogues speakers.
+  nextDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  previousDialogueNodes:
+  - dcaf4a16-bb36-4357-a1e7-6585da1a50eb
+  rect:
+    serializedVersion: 2
+    x: 549
+    y: 330
+    width: 200
+    height: 100
 --- !u!114 &-5052338321070787189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +174,31 @@ MonoBehaviour:
     serializedVersion: 2
     x: 992
     y: 1092
+    width: 200
+    height: 100
+--- !u!114 &-4853096783762203277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: cb228245-7ffb-4459-84f8-6fdf9a692119
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: After that just Import the translated CSV in the Dialogue Editor and it will
+    restore it.
+  nextDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  previousDialogueNodes:
+  - be190734-1585-4d7e-82bb-49c4c36175dc
+  rect:
+    serializedVersion: 2
+    x: 436
+    y: 1088
     width: 200
     height: 100
 --- !u!114 &-4611833367407083330
@@ -177,6 +250,54 @@ MonoBehaviour:
     y: 813
     width: 200
     height: 100
+--- !u!114 &-3512244279698097385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 4225eef3-4816-4d17-bc51-ebae4fe29b1c
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Also the Dialogue editor automatically saves your work when the window is
+    closed.
+  nextDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  previousDialogueNodes:
+  - f4648160-4122-4237-9b98-8aa951924bb2
+  rect:
+    serializedVersion: 2
+    x: 207
+    y: 1247
+    width: 200
+    height: 100
+--- !u!114 &-3277070141679232631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 2edada54-d9f2-412c-8a04-04b6c71e690d
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Thanks a lot for listen, I hope this help you.
+  nextDialogueNodes: []
+  previousDialogueNodes:
+  - cfa0e30d-a89b-48eb-add2-5b7fb298bfa1
+  rect:
+    serializedVersion: 2
+    x: 891
+    y: 926
+    width: 200
+    height: 100
 --- !u!114 &-2812103028248896056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +347,126 @@ MonoBehaviour:
     y: 963
     width: 200
     height: 100
+--- !u!114 &-2362542904814747755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 48385fbe-12a5-4a1e-b420-182e17144f4f
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: That way you just need to define the Speker once and use in many conversations.
+  nextDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  previousDialogueNodes:
+  - cf215a10-0744-432c-b317-9ff17ce58e69
+  rect:
+    serializedVersion: 2
+    x: 667
+    y: 1245
+    width: 200
+    height: 100
+--- !u!114 &-2272258296270271807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 2647aecb-ed06-4d0f-97b0-df07ab5c9e17
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
+  text: Speakers
+  nextDialogueNodes:
+  - b1c6f946-cd08-4284-8427-026200ef7bb5
+  previousDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  rect:
+    serializedVersion: 2
+    x: 664
+    y: 784
+    width: 200
+    height: 100
+--- !u!114 &-1784033759092621170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 5f35104e-4d2e-492b-a1cf-590ba98cba42
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
+  text: Dialogue editor
+  nextDialogueNodes:
+  - 212ec800-b9a9-46a7-b11d-814565541eb1
+  previousDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  rect:
+    serializedVersion: 2
+    x: 215
+    y: 789
+    width: 200
+    height: 100
+--- !u!114 &-754629604076805087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: cf215a10-0744-432c-b317-9ff17ce58e69
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: It was implemented using ScriptableObjects for more flexibility
+  nextDialogueNodes:
+  - 48385fbe-12a5-4a1e-b420-182e17144f4f
+  previousDialogueNodes:
+  - b1c6f946-cd08-4284-8427-026200ef7bb5
+  rect:
+    serializedVersion: 2
+    x: 669
+    y: 1088
+    width: 200
+    height: 100
+--- !u!114 &-179536140470939121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: dcaf4a16-bb36-4357-a1e7-6585da1a50eb
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: The dialogue system that helps you managing your conversations.
+  nextDialogueNodes:
+  - e8b268db-e7b1-43bb-b6d4-ad1619f41329
+  previousDialogueNodes:
+  - 60a2f3d6-8806-4471-bc3d-6d1f6db8088a
+  rect:
+    serializedVersion: 2
+    x: 550
+    y: 180
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,23 +499,23 @@ MonoBehaviour:
     - 48385fbe-12a5-4a1e-b420-182e17144f4f
     - 2edada54-d9f2-412c-8a04-04b6c71e690d
     m_values:
-    - {fileID: 7108438137489400955}
-    - {fileID: 5617136351486516484}
-    - {fileID: 2057449373988595906}
-    - {fileID: -7071491712433546024}
-    - {fileID: -9212106246590001024}
-    - {fileID: -6612247857525176408}
-    - {fileID: -2812103028248896056}
-    - {fileID: 8027392003585161863}
-    - {fileID: -7884127120792338442}
-    - {fileID: -4611833367407083330}
-    - {fileID: -2599263975564774836}
-    - {fileID: 1481536688478660246}
-    - {fileID: 6459626341852004120}
-    - {fileID: -5052338321070787189}
-    - {fileID: 4082764919751433250}
-    - {fileID: -3708490256307223711}
-    - {fileID: 1006961520175137196}
+    - {fileID: -7717569433524571849}
+    - {fileID: -179536140470939121}
+    - {fileID: -5796057073753525197}
+    - {fileID: 3242824222037518474}
+    - {fileID: 2775507891234872507}
+    - {fileID: -2272258296270271807}
+    - {fileID: -1784033759092621170}
+    - {fileID: 6142325916081312417}
+    - {fileID: 1275164169694758412}
+    - {fileID: -3512244279698097385}
+    - {fileID: 4312348578661183950}
+    - {fileID: -4853096783762203277}
+    - {fileID: 1165078870646381979}
+    - {fileID: 5208225543778457636}
+    - {fileID: -754629604076805087}
+    - {fileID: -2362542904814747755}
+    - {fileID: -3277070141679232631}
   startDialogueNodeName: 60a2f3d6-8806-4471-bc3d-6d1f6db8088a
 --- !u!114 &1006961520175137196
 MonoBehaviour:
@@ -297,6 +538,55 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1875
     y: 782
+    width: 200
+    height: 100
+--- !u!114 &1165078870646381979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: cfa0e30d-a89b-48eb-add2-5b7fb298bfa1
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
+  text: End
+  nextDialogueNodes:
+  - 2edada54-d9f2-412c-8a04-04b6c71e690d
+  previousDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  rect:
+    serializedVersion: 2
+    x: 891
+    y: 784
+    width: 200
+    height: 100
+--- !u!114 &1275164169694758412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: f4648160-4122-4237-9b98-8aa951924bb2
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Is implemented with the latest Unity Undo system, that way you will never
+    lose any work. Just press Ctrl + Z to Undo a change.
+  nextDialogueNodes:
+  - 4225eef3-4816-4d17-bc51-ebae4fe29b1c
+  previousDialogueNodes:
+  - 212ec800-b9a9-46a7-b11d-814565541eb1
+  rect:
+    serializedVersion: 2
+    x: 207
+    y: 1091
     width: 200
     height: 100
 --- !u!114 &1481536688478660246
@@ -349,6 +639,60 @@ MonoBehaviour:
     y: 324
     width: 200
     height: 100
+--- !u!114 &2775507891234872507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: d13bb368-58dc-4317-bfcb-e7af09fb4329
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: daa7e28c99449914eb5e4ae6e6f1e32b, type: 2}
+  text: Import/Export CSV
+  nextDialogueNodes:
+  - be190734-1585-4d7e-82bb-49c4c36175dc
+  previousDialogueNodes:
+  - a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  rect:
+    serializedVersion: 2
+    x: 434
+    y: 787
+    width: 200
+    height: 100
+--- !u!114 &3242824222037518474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: a8f4c90d-4535-4972-a1a7-55763a76eb9f
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: What do you want to know more about?
+  nextDialogueNodes:
+  - d13bb368-58dc-4317-bfcb-e7af09fb4329
+  - 2647aecb-ed06-4d0f-97b0-df07ab5c9e17
+  - 5f35104e-4d2e-492b-a1cf-590ba98cba42
+  - cfa0e30d-a89b-48eb-add2-5b7fb298bfa1
+  previousDialogueNodes:
+  - e8b268db-e7b1-43bb-b6d4-ad1619f41329
+  - 4225eef3-4816-4d17-bc51-ebae4fe29b1c
+  - cb228245-7ffb-4459-84f8-6fdf9a692119
+  - 48385fbe-12a5-4a1e-b420-182e17144f4f
+  rect:
+    serializedVersion: 2
+    x: 550
+    y: 473
+    width: 200
+    height: 100
 --- !u!114 &4082764919751433250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +717,56 @@ MonoBehaviour:
     y: 1235
     width: 200
     height: 100
+--- !u!114 &4312348578661183950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: be190734-1585-4d7e-82bb-49c4c36175dc
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: In Dialogue Editor you can Export the dialogue in CSV to help you translate
+    the conversation.
+  nextDialogueNodes:
+  - cb228245-7ffb-4459-84f8-6fdf9a692119
+  previousDialogueNodes:
+  - d13bb368-58dc-4317-bfcb-e7af09fb4329
+  rect:
+    serializedVersion: 2
+    x: 434
+    y: 949
+    width: 200
+    height: 100
+--- !u!114 &5208225543778457636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: b1c6f946-cd08-4284-8427-026200ef7bb5
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Speaker like the name sugests, the element that is speaking the line of the
+    dialogue.
+  nextDialogueNodes:
+  - cf215a10-0744-432c-b317-9ff17ce58e69
+  previousDialogueNodes:
+  - 2647aecb-ed06-4d0f-97b0-df07ab5c9e17
+  rect:
+    serializedVersion: 2
+    x: 668
+    y: 950
+    width: 200
+    height: 100
 --- !u!114 &5617136351486516484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +789,31 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1687
     y: 188
+    width: 200
+    height: 100
+--- !u!114 &6142325916081312417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9ae0236869b241b10851e5d7c12e1, type: 3}
+  m_Name: 212ec800-b9a9-46a7-b11d-814565541eb1
+  m_EditorClassIdentifier: 
+  spearker: {fileID: 11400000, guid: a9e42f78d715bd147bd24a1aa0a52e93, type: 2}
+  text: Dialogue editor has a very intuitive tree structure for you manage the conversation
+    flow.
+  nextDialogueNodes:
+  - f4648160-4122-4237-9b98-8aa951924bb2
+  previousDialogueNodes:
+  - 5f35104e-4d2e-492b-a1cf-590ba98cba42
+  rect:
+    serializedVersion: 2
+    x: 207
+    y: 952
     width: 200
     height: 100
 --- !u!114 &6459626341852004120
