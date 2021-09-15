@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingPlacementSystem : MonoBehaviour
+public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
 {
     [SerializeField] List<GridObjectSO> buildings;
 
@@ -14,7 +14,7 @@ public class BuildingPlacementSystem : MonoBehaviour
     private GridObjectSO currentBuilding;
     private GridXZDebug<GridObject> grid;
 
-    void Awake()
+    protected override void OnAwake()
     {
         grid = new GridXZDebug<GridObject>(
             new ObjectPlacementGrid(10, 10, 4)
@@ -66,6 +66,11 @@ public class BuildingPlacementSystem : MonoBehaviour
         {
             currentDirection = currentDirection.Next();
         }
+    }
+
+    public void SetCurrentBuilding(GridObjectSO building)
+    {
+        currentBuilding = building;
     }
 
     private Vector3 CalculateOffset()
