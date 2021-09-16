@@ -64,5 +64,6 @@ namespace Assets.Scenes.Systems.BuildingPlacementSystem
 
             return true;
         }
+
     }
 }

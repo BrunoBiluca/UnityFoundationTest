@@ -38,20 +38,16 @@ public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
 
             var requestBuildingPos = grid.GetWorldPosition(position.x, position.y);
 
-            bool setResult = grid.TrySetGridValue(
-                requestBuildingPos,
-                new GridObject(
-                    currentBuilding,
-                    currentDirection
-                )
-            );
-            if(setResult)
+            var gridObject = new GridObject(currentBuilding, currentDirection);
+            if(grid.TrySetGridValue(requestBuildingPos, gridObject))
             {
                 Instantiate(
                     currentBuilding.Prefab,
                     requestBuildingPos + CalculateOffset(),
                     Quaternion.Euler(0f, currentDirection.Rotation, 0f)
-                );
+                )
+                    .GetComponent<Building>()
+                    .Setup(gridObject);
             }
         }
 
@@ -93,4 +89,11 @@ public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
            offsetY * currentDirection.Offset.y * grid.CellSize
         );
     }
+
+    public void RemoveBuilding(Building building)
+    {
+        grid.ClearGridValue(building.GridObjectRef);
+        Destroy(building.gameObject);
+    }
+
 }
