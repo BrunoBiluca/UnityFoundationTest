@@ -2,12 +2,14 @@ using Assets.Scenes.Systems.BuildingPlacementSystem;
 using Assets.UnityFoundation.CameraScripts;
 using Assets.UnityFoundation.Code.DebugHelper;
 using Assets.UnityFoundation.Code.Grid;
-using System;
+using Assets.UnityFoundation.Code.ObjectPooling;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
 {
+    [SerializeField] MultipleObjectPooling buildingPooling;
+
     [SerializeField] List<GridObjectSO> buildings;
 
     private GridObjectDirection currentDirection;
@@ -23,6 +25,11 @@ public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
 
         currentBuilding = buildings[0];
         currentDirection = GridObjectDirection.DOWN;
+    }
+
+    private void Start()
+    {
+        buildingPooling.InstantiateObjects();
     }
 
     private void Update()
@@ -41,13 +48,20 @@ public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
             var gridObject = new GridObject(currentBuilding, currentDirection);
             if(grid.TrySetGridValue(requestBuildingPos, gridObject))
             {
-                Instantiate(
-                    currentBuilding.Prefab,
-                    requestBuildingPos + CalculateOffset(),
-                    Quaternion.Euler(0f, currentDirection.Rotation, 0f)
-                )
+                var building = buildingPooling.GetAvailableObject(currentBuilding.Tag).Get();
+
+                building
                     .GetComponent<Building>()
-                    .Setup(gridObject);
+                    .Setup(gridObject)
+                    .Activate((go) => {
+                        go
+                        .transform
+                        .position = requestBuildingPos + CalculateOffset();
+
+                        go
+                        .transform
+                        .rotation = Quaternion.Euler(0f, currentDirection.Rotation, 0f);
+                    });
             }
         }
 
@@ -93,7 +107,7 @@ public class BuildingPlacementSystem : Singleton<BuildingPlacementSystem>
     public void RemoveBuilding(Building building)
     {
         grid.ClearGridValue(building.GridObjectRef);
-        Destroy(building.gameObject);
+        building.Deactivate();
     }
 
 }

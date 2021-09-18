@@ -1,9 +1,7 @@
 using Assets.Scenes.Systems.BuildingPlacementSystem;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Assets.UnityFoundation.Code.ObjectPooling;
 
-public class Building : MonoBehaviour
+public class Building : PooledObject
 {
     public GridObject GridObjectRef { get; private set; }
 
