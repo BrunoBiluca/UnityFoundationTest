@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57e77b885182df49afd124e49f928fb, type: 3}
   m_Name: gas_station_building_so
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scenes.Systems.BuildingPlacementSystem:GridObject
+  buildingName: Gas Station
+  tag: gas_station
   width: 2
   height: 1
   objPrefab: {fileID: 7584957341053555213, guid: bd152fee02e732b438af720eb3cdcb40, type: 3}

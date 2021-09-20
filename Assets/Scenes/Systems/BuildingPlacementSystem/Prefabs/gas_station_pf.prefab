@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758e8698573afd14ab45de019b415e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 6460005179914881640}
 --- !u!1 &7584957340181883963
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +412,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7584957341053555212}
     m_Modifications:
+    - target: {fileID: 316113246246491214, guid: bdcb1e4602482324a830a724e7f7e78e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51a013fe63ab17d40ba9b9f6c3909626, type: 2}
     - target: {fileID: 1939849006181770126, guid: bdcb1e4602482324a830a724e7f7e78e, type: 3}
       propertyPath: m_Name
       value: mesh

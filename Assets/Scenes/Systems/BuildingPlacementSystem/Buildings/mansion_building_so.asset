@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57e77b885182df49afd124e49f928fb, type: 3}
   m_Name: mansion_building_so
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scenes.Systems.BuildingPlacementSystem:GridObject
+  buildingName: Mansion
+  tag: mansion
   width: 2
   height: 2
   objPrefab: {fileID: 4034007252892165534, guid: 6ff3e2e7464fbdf49b3a42f1f911239d, type: 3}

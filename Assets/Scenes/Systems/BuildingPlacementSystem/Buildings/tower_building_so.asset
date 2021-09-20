@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57e77b885182df49afd124e49f928fb, type: 3}
   m_Name: tower_building_so
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scenes.Systems.BuildingPlacementSystem:GridObject
+  buildingName: Tower
+  tag: tower
   width: 1
   height: 1
   objPrefab: {fileID: 2047125692541154326, guid: 723e4174ef1193041b0825e4006959ee, type: 3}
