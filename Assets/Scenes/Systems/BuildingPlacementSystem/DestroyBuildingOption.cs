@@ -13,6 +13,7 @@ public class DestroyBuildingOption : MonoBehaviour
         GetComponent<Button>().onClick
             .AddListener(() => {
                 BuildingPlacementSystem.Instance.RemoveBuilding(building);
+                CinemachineCameraShake.Instance.Shake();
             });
     }
 }

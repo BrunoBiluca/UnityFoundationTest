@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 49842803}
   - component: {fileID: 49842802}
   - component: {fileID: 49842801}
+  - component: {fileID: 49842804}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -217,6 +218,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &49842804
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49842799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &221776271
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +692,7 @@ GameObject:
   - component: {fileID: 1083621566}
   - component: {fileID: 1083621568}
   - component: {fileID: 1083621569}
+  - component: {fileID: 1083621570}
   m_Layer: 0
   m_Name: main_virtual_camera
   m_TagString: Untagged
@@ -766,6 +785,20 @@ MonoBehaviour:
   m_FocusTarget: {fileID: 0}
   m_FocusOffset: 0
   m_Profile: {fileID: 11400000, guid: 75526692948adb6498dfa13d6f520f57, type: 2}
+--- !u!114 &1083621570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083621565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a8343980193f1459c7839ba6e99272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnLoad: 1
+  shakeTimeAmount: 0.5
 --- !u!1 &1176515969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,15 +1548,15 @@ PrefabInstance:
     - target: {fileID: 5510947796009357502, guid: e9916d2e29fa2a84a9548cc351c8fc62, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: fdf92f0c721177d419f9a748fa62807d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8cc21b00cfb35924da0e989210149ae7, type: 2}
     - target: {fileID: 5510947796009357502, guid: e9916d2e29fa2a84a9548cc351c8fc62, type: 3}
       propertyPath: buildings.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 83e2480255a695a4bb3f95b859974d30, type: 2}
+      objectReference: {fileID: 11400000, guid: fdf92f0c721177d419f9a748fa62807d, type: 2}
     - target: {fileID: 5510947796009357502, guid: e9916d2e29fa2a84a9548cc351c8fc62, type: 3}
       propertyPath: buildings.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 8cc21b00cfb35924da0e989210149ae7, type: 2}
+      objectReference: {fileID: 11400000, guid: 83e2480255a695a4bb3f95b859974d30, type: 2}
     - target: {fileID: 5510947796009357503, guid: e9916d2e29fa2a84a9548cc351c8fc62, type: 3}
       propertyPath: m_RootOrder
       value: 3
