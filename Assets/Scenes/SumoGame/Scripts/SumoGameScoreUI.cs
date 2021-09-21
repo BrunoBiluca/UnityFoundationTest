@@ -1,3 +1,4 @@
+using Assets.UnityFoundation.Code.Common;
 using TMPro;
 
 public class SumoGameScoreUI : Singleton<SumoGameScoreUI>

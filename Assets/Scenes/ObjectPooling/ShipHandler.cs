@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.UnityFoundation.Code.ObjectPooling;
 using UnityEngine;
 
 public class ShipHandler : MonoBehaviour {
@@ -8,6 +7,7 @@ public class ShipHandler : MonoBehaviour {
 
     void Start() {
         shootObjectPooling = GetComponent<ObjectPooling>();
+        shootObjectPooling.InstantiateObjects();
 
         InvokeRepeating(nameof(Shoot), 0.33f, 0.33f);
     }

@@ -1,8 +1,8 @@
+using Assets.UnityFoundation.Code.ObjectPooling;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootHandler : MonoBehaviour {
+public class ShootHandler : PooledObject {
 
     private float speed = 3f;
     
@@ -18,7 +18,7 @@ public class ShootHandler : MonoBehaviour {
 
     void Update() {
         if(transform.position.y > maxVerticalPosition) {
-            gameObject.SetActive(false);
+            Deactivate();
         }
     }
 

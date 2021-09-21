@@ -1,3 +1,4 @@
+using Assets.UnityFoundation.Code.ObjectPooling;
 using UnityEngine;
 
 public class SumoEnemyController : PooledObject
