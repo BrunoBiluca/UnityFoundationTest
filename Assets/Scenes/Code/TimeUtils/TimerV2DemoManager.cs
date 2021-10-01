@@ -10,13 +10,13 @@ public class TimerV2DemoManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI loopCompletionText;
     [SerializeField] private Button toggleLoopTimerButton;
     private int loopCounter;
-    private TimerV2 loopTimer;
+    private Timer loopTimer;
 
     [SerializeField] private TextMeshProUGUI runCounterText;
     [SerializeField] private TextMeshProUGUI runOnceCompletionText;
     [SerializeField] private Button runOnceResetButton;
     private int runOnceCounter;
-    private TimerV2 runOnceTimer;
+    private Timer runOnceTimer;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class TimerV2DemoManager : MonoBehaviour
 
     private void RunLoopTimer()
     {
-        loopTimer = new TimerV2(5f, () => {
+        loopTimer = new Timer(5f, () => {
             loopCounter++;
             loopCounterText.text = $"Count: {loopCounter}";
         })
@@ -58,7 +58,7 @@ public class TimerV2DemoManager : MonoBehaviour
 
     private void RunOnceTimer()
     {
-        runOnceTimer = new TimerV2(5f, () => {
+        runOnceTimer = new Timer(5f, () => {
             runOnceCounter++;
             runCounterText.text = $"Count: {runOnceCounter}";
         })

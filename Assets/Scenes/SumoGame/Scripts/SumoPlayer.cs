@@ -18,13 +18,13 @@ public class SumoPlayer : MonoBehaviour
     private Rigidbody rigidBody;
     private Transform focalPoint;
 
-    private TimerV2 jumpCooldown;
+    private Timer jumpCooldown;
     private bool canJump;
 
     private void Awake()
     {
         canJump = true;
-        jumpCooldown = new TimerV2(2f, () => canJump = true).RunOnce();
+        jumpCooldown = new Timer(2f, () => canJump = true).RunOnce();
 
         rigidBody = GetComponent<Rigidbody>();
     }

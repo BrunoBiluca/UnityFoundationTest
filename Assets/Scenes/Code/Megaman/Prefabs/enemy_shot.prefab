@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5869129651093956732}
   - component: {fileID: 5869129651093956733}
   - component: {fileID: 5869129651093956730}
-  m_Layer: 12
-  m_Name: megaman_shot
+  m_Layer: 11
+  m_Name: enemy_shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

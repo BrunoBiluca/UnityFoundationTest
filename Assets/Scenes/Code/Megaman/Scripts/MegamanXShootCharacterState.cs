@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Assets.UnityFoundation.Code.Character2D;
 using UnityEngine;
 
 public class MegamanXShootCharacterState : AttackCharacterState
@@ -37,11 +37,11 @@ public class MegamanXShootCharacterState : AttackCharacterState
         )
         { return; }
 
-        var projectile = UnityEngine.Object.Instantiate(
+        var projectile = Object.Instantiate(
             megaman.megamanShootPrefab, megaman.shootSpawnRef.position, Quaternion.identity
         );
         MegamanProjectile megamanProjectile = projectile.GetComponent<MegamanProjectile>();
-        megamanProjectile.Setup(spriteRenderer.flipX ? -1 : 1);
+        megamanProjectile.Setup(spriteRenderer.flipX ? -1 : 1, megaman.gameObject);
 
         megamanProjectile.OnShootDestroy += (sender, args) => activeShoots--;
 

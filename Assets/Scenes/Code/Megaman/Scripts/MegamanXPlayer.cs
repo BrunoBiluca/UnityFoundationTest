@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using Assets.UnityFoundation.Code.Character2D;
+using Assets.UnityFoundation.HealthSystem;
 using UnityEngine;
 
 public class MegamanXPlayer : Player
@@ -11,13 +9,9 @@ public class MegamanXPlayer : Player
 
     public bool readyToShoot;
 
-    private SpriteRenderer spriteRenderer;
-
     protected override void OnAwake()
     {
-        base.OnAwake();
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        GetComponent<HealthSystem>();
     }
 
     protected override void SetCharacterStates() {
