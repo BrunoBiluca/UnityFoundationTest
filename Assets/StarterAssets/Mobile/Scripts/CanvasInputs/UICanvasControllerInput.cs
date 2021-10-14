@@ -1,3 +1,4 @@
+using Assets.UnityFoundation.Systems.Character3D;
 using UnityEngine;
 
 namespace StarterAssets
