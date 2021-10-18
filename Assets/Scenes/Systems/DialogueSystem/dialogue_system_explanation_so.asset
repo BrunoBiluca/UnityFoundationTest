@@ -147,8 +147,8 @@ MonoBehaviour:
   - dcaf4a16-bb36-4357-a1e7-6585da1a50eb
   rect:
     serializedVersion: 2
-    x: 549
-    y: 330
+    x: 550
+    y: 328
     width: 200
     height: 100
 --- !u!114 &-5052338321070787189
@@ -197,7 +197,7 @@ MonoBehaviour:
   - be190734-1585-4d7e-82bb-49c4c36175dc
   rect:
     serializedVersion: 2
-    x: 436
+    x: 434
     y: 1088
     width: 200
     height: 100
@@ -271,7 +271,7 @@ MonoBehaviour:
   - f4648160-4122-4237-9b98-8aa951924bb2
   rect:
     serializedVersion: 2
-    x: 207
+    x: 205
     y: 1247
     width: 200
     height: 100
@@ -294,8 +294,8 @@ MonoBehaviour:
   - cfa0e30d-a89b-48eb-add2-5b7fb298bfa1
   rect:
     serializedVersion: 2
-    x: 891
-    y: 926
+    x: 893
+    y: 946
     width: 200
     height: 100
 --- !u!114 &-2812103028248896056
@@ -367,7 +367,7 @@ MonoBehaviour:
   - cf215a10-0744-432c-b317-9ff17ce58e69
   rect:
     serializedVersion: 2
-    x: 667
+    x: 665
     y: 1245
     width: 200
     height: 100
@@ -391,8 +391,8 @@ MonoBehaviour:
   - a8f4c90d-4535-4972-a1a7-55763a76eb9f
   rect:
     serializedVersion: 2
-    x: 664
-    y: 784
+    x: 660
+    y: 788
     width: 200
     height: 100
 --- !u!114 &-1784033759092621170
@@ -415,7 +415,7 @@ MonoBehaviour:
   - a8f4c90d-4535-4972-a1a7-55763a76eb9f
   rect:
     serializedVersion: 2
-    x: 215
+    x: 213
     y: 789
     width: 200
     height: 100
@@ -439,7 +439,7 @@ MonoBehaviour:
   - b1c6f946-cd08-4284-8427-026200ef7bb5
   rect:
     serializedVersion: 2
-    x: 669
+    x: 667
     y: 1088
     width: 200
     height: 100
@@ -560,8 +560,8 @@ MonoBehaviour:
   - a8f4c90d-4535-4972-a1a7-55763a76eb9f
   rect:
     serializedVersion: 2
-    x: 891
-    y: 784
+    x: 887
+    y: 791
     width: 200
     height: 100
 --- !u!114 &1275164169694758412
@@ -585,7 +585,7 @@ MonoBehaviour:
   - 212ec800-b9a9-46a7-b11d-814565541eb1
   rect:
     serializedVersion: 2
-    x: 207
+    x: 205
     y: 1091
     width: 200
     height: 100
@@ -659,7 +659,7 @@ MonoBehaviour:
   - a8f4c90d-4535-4972-a1a7-55763a76eb9f
   rect:
     serializedVersion: 2
-    x: 434
+    x: 432
     y: 787
     width: 200
     height: 100
@@ -689,7 +689,7 @@ MonoBehaviour:
   - 48385fbe-12a5-4a1e-b420-182e17144f4f
   rect:
     serializedVersion: 2
-    x: 550
+    x: 548
     y: 473
     width: 200
     height: 100
@@ -738,7 +738,7 @@ MonoBehaviour:
   - d13bb368-58dc-4317-bfcb-e7af09fb4329
   rect:
     serializedVersion: 2
-    x: 434
+    x: 432
     y: 949
     width: 200
     height: 100
@@ -763,7 +763,7 @@ MonoBehaviour:
   - 2647aecb-ed06-4d0f-97b0-df07ab5c9e17
   rect:
     serializedVersion: 2
-    x: 668
+    x: 666
     y: 950
     width: 200
     height: 100
@@ -812,7 +812,7 @@ MonoBehaviour:
   - 5f35104e-4d2e-492b-a1cf-590ba98cba42
   rect:
     serializedVersion: 2
-    x: 207
+    x: 205
     y: 952
     width: 200
     height: 100
