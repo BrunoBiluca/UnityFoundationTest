@@ -1,6 +1,6 @@
 using Assets.UnityFoundation.Code.Character2D;
 using Assets.UnityFoundation.Code.TimeUtils;
-using Assets.UnityFoundation.HealthSystem;
+using Assets.UnityFoundation.Systems.HealthSystem;
 using UnityEngine;
 
 public class MetallPlayer : BaseCharacter

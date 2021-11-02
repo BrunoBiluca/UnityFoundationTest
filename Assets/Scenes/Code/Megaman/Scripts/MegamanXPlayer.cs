@@ -1,5 +1,5 @@
 using Assets.UnityFoundation.Code.Character2D;
-using Assets.UnityFoundation.HealthSystem;
+using Assets.UnityFoundation.Systems.HealthSystem;
 using UnityEngine;
 
 public class MegamanXPlayer : Player

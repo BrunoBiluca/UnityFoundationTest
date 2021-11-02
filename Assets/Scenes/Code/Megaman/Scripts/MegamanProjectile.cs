@@ -1,4 +1,4 @@
-using Assets.UnityFoundation.HealthSystem;
+using Assets.UnityFoundation.Systems.HealthSystem;
 using System;
 using UnityEngine;
 
