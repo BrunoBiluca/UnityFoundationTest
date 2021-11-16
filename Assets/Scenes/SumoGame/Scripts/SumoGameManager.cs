@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class SumoGameManager : BaseGameManager<SumoGameManager>
 {
     [SerializeField] private Transform startPanel;
+    [SerializeField] private AudioSource audioSource;
 
     private const string PLAYER_SAVE_FILE = "player_score.dat";
 
@@ -24,10 +25,11 @@ public class SumoGameManager : BaseGameManager<SumoGameManager>
 
     private void Start()
     {
-        SceneManager.sceneLoaded += delegate {
-            startPanel = GameObject.Find("start_panel").transform;
-            SetupScores(); 
-        };
+        User = PlayerPrefs.GetString("user_name");
+
+        startPanel.Find("user_input")
+            .GetComponent<TMP_InputField>()
+            .text = User;
 
         startPanel
             .Find("user_input")
@@ -94,7 +96,8 @@ public class SumoGameManager : BaseGameManager<SumoGameManager>
 
     public void EnemyFell()
     {
-        SumoGameScoreUI.Instance.UpdateScore(Score++);
+        audioSource.Play();
+        SumoGameScoreUI.Instance.UpdateScore(++Score);
     }
 
     public void PlayerFell()

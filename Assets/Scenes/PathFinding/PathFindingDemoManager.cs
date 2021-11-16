@@ -1,4 +1,6 @@
-﻿using Assets.UnityFoundation.Code.Grid;
+﻿using Assets.UnityFoundation.Code.Common;
+using Assets.UnityFoundation.Code.Grid;
+using Assets.UnityFoundation.Systems.PathFinder;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -20,7 +22,7 @@ public class PathFindingDemoManager : MonoBehaviour
     {
         grid = new GridXYDebug(new GridXY(gridWidth, gridHeight));
         grid.Display();
-        pathFindingGrid = new PathFinding(new int2(gridWidth, gridHeight), debug: false);
+        pathFindingGrid = new PathFinding(new Int2(gridWidth, gridHeight), debug: false);
 
         mouseInputs = new List<Vector3>();
     }
@@ -59,7 +61,7 @@ public class PathFindingDemoManager : MonoBehaviour
         {
             var startPos = grid.GetGridPostion(mouseInputs.First());
             var endPos = grid.GetGridPostion(mouseInputs.Last());
-            var path = pathFindingGrid.FindPath(new int2(startPos), new int2(endPos));
+            var path = pathFindingGrid.FindPath(new Int2(startPos), new Int2(endPos));
 
             mouseInputs.Clear();
             if(path.Count() == 1)

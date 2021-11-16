@@ -19,7 +19,7 @@ public class SumoGameOverUI : Singleton<SumoGameOverUI>
             .GetComponent<Button>()
             .onClick
             .AddListener(() => {
-                SceneManager.LoadScene("Prototype 4");
+                SceneManager.LoadScene("sumo_gameplay_scene");
             });
 
         scoreText = transform.Find("score_counter_panel")
