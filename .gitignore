@@ -63,4 +63,5 @@ crashlytics-build.properties
 
 /Assets/PolygonPrototype.meta
 /Assets/PolygonPrototype/**
+/Assets/External/**
 
